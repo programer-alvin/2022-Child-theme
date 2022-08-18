@@ -1,4 +1,7 @@
 <?php
+// fields
+require_once trailingslashit( get_stylesheet_directory() ) . '/acf/blocks/testimonial/field-group.php';
+
 add_action( 'acf/init', 'my_acf_init_block_types' );
 function my_acf_init_block_types() {
 
@@ -19,3 +22,4 @@ function my_acf_init_block_types() {
 		);
 	}
 }
+
