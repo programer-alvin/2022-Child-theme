@@ -16,7 +16,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'testimonial';
+$className = 'testimonial-block';
 if ( ! empty( $block['className'] ) ) {
 	$className .= ' ' . $block['className'];
 }
@@ -33,6 +33,12 @@ $background_color = get_field( 'background_color' );
 $text_color       = get_field( 'text_color' );
 
 ?>
+<style>
+
+.testimonial-block{
+    background: #bbbb45;
+}
+</style>
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $className ); ?>">
 	<blockquote class="testimonial-blockquote">
 		<span class="testimonial-text"><?php echo $text; ?></span>

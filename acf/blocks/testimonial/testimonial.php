@@ -18,6 +18,16 @@ function my_acf_init_block_types() {
 				'category'        => 'formatting',
 				'icon'            => 'admin-comments',
 				'keywords'        => array( 'testimonial', 'quote' ),
+				'enqueue_style'   => get_stylesheet_directory_uri() . '/acf/blocks/testimonial/testimonial-block.css',
+
+				'example'         => array(
+					'attributes' => array(
+						'mode' => 'preview', // https://support.advancedcustomfields.com/forums/topic/register-block-preview-image-with-acf_register_block_type/.
+						'data' => array(
+							'preview_image_help' => '../your/dir/block-image-preview.jpg',
+						),
+					),
+				),
 			)
 		);
 	}
