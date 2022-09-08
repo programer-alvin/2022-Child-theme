@@ -1,5 +1,6 @@
 <?php
-/* Template Name: Post Form
+/*
+ Template Name: Post Form
 *  Template Post Type: post, page
 */
 ?>

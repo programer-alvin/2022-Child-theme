@@ -19,7 +19,9 @@ get_header();
 				'post_title'   => false,
 				'post_content' => false,
 				'submit_value' => __( 'Update meta' ),
-				'fields'       => array( 'field_62fea3edd36a3' ),
+				// 'fields'       => array( 'field_62fea3edd36a3' ),
+				'field_groups' => array( 'group_62fea3503ab1e' ),
+				'uploader'     => 'basic',
 			)
 		);
 		?>

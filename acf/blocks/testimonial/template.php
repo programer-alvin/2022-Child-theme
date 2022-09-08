@@ -36,7 +36,7 @@ $text_color       = get_field( 'text_color' );
 <style>
 
 .testimonial-block{
-    background: #bbbb45;
+	background: #bbbb45;
 }
 </style>
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $className ); ?>">

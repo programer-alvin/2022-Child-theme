@@ -7,6 +7,25 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 			'title'                 => 'Testimonial Block',
 			'fields'                => array(
 				array(
+					'key'               => 'field_62fe4f92baabf',
+					'label'             => 'wysiwyg',
+					'name'              => 'wysiwyg',
+					'type'              => 'wysiwyg',
+					'instructions'      => '',
+					'required'          => 0,
+					'conditional_logic' => 0,
+					'wrapper'           => array(
+						'width' => '',
+						'class' => '',
+						'id'    => '',
+					),
+					'default_value'     => '',
+					'placeholder'       => '',
+					'maxlength'         => '',
+					'rows'              => '',
+					'new_lines'         => '',
+				),
+				array(
 					'key'               => 'field_62fe4f92bddeb',
 					'label'             => 'Testimonial',
 					'name'              => 'testimonial',
