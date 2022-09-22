@@ -13,9 +13,15 @@ function test_woo() {
 	echo 'abc';
 }
 
+//cpts
+require_once trailingslashit( get_stylesheet_directory() ) . '/cpts/cpts.php';
+
 // acf
 require_once trailingslashit( get_stylesheet_directory() ) . '/acf/acf.php';
 require_once trailingslashit( get_stylesheet_directory() ) . '/acf/blocks/acf-test-block/acf-test.php';
+
+
+
 
 
 
