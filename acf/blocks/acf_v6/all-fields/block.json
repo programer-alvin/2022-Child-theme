@@ -72,5 +72,11 @@
                 "text_area": "This is an example text area field"
             }
         }
-    }
+    },
+
+    "editorScript": "file:./index.js", 
+    "script": "file:./script.js",
+    "viewScript": [ "file:./view.js", "example-shared-view-script" ],
+    "editorStyle": "file:./index.css"
+
 }

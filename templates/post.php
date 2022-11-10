@@ -15,17 +15,14 @@
         'post_title'    => true,
         'post_content'  => true,
         'new_post'      => array(
-            'post_type'     => 'event',
+            'post_type'     => 'post',
             'post_status'   => 'publish'
         ),
-        'submit_value'  => 'Create new event'
+        'submit_value'  => 'Create new post'
     )); ?>
     <?php endwhile; ?>
 
-    <form method="post">
-    <input type="text" name="Name">
-    <input type="submit" value="Submit">
-    </form>
+    
     </div><!-- #content -->
 </div><!-- #primary -->
 

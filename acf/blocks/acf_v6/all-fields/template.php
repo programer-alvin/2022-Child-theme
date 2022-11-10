@@ -5,3 +5,4 @@ echo '<pre>';
 var_export($block);
 
 echo '</pre>';*/
+echo 'Test';
