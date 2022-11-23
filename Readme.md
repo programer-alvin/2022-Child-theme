@@ -1,0 +1,1 @@
+This is a test theme and not production one.

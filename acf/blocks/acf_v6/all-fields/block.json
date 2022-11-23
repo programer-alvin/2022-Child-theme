@@ -64,9 +64,12 @@
     },
     "example": {
         "attributes": {
+            "cover": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+            "author": "Alvin Muthui",
             "data": {
                 "text": "This is an example text field",
-                "text_area": "This is an example text area field"
+                "text_area": "This is an example text area field",
+                "is_example" :true
             }
         }
     },
