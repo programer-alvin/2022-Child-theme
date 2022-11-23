@@ -1,1 +1,1 @@
-alert('view Script');
+console.log('view Script');

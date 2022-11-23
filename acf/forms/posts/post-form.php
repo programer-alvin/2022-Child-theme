@@ -15,13 +15,13 @@ get_header();
 		<?php
 		acf_form(
 			array(
-				'post_id'      => 123,
+				'post_id'      => get_the_ID(),
 				'post_title'   => false,
 				'post_content' => false,
 				'submit_value' => __( 'Update meta' ),
 				// 'fields'       => array( 'field_62fea3edd36a3' ),
 				'field_groups' => array( 'group_62fea3503ab1e' ),
-				'uploader'     => 'basic',
+				'uploader'     => 'wp',
 			)
 		);
 		?>

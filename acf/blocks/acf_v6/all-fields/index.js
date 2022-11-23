@@ -1,1 +1,1 @@
-alert('editor Script');
+console.log('editor Script');

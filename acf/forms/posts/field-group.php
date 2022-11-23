@@ -106,6 +106,25 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 					'max_size'          => '',
 					'mime_types'        => '',
 				),
+				array(
+					'key'               => 'field_6310659ce7d12',
+					'label'             => 'Image',
+					'name'              => 'image',
+					'type'              => 'image',
+					'instructions'      => '',
+					'required'          => 0,
+					'conditional_logic' => 0,
+					'wrapper'           => array(
+						'width' => '',
+						'class' => '',
+						'id'    => '',
+					),
+					'return_format'     => 'array',
+					'library'           => 'all',
+					'min_size'          => '',
+					'max_size'          => '',
+					'mime_types'        => '',
+				),
 			),
 			'location'              => array(
 				array(
