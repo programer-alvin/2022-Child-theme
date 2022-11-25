@@ -8,7 +8,6 @@ echo '</pre>';*/
 
 
 
-// block.php
 if (get_field('is_example')) {
 	/* Render preview screenshot/html on this section*/
     if(array_key_exists('example',$block)){
@@ -31,7 +30,7 @@ if (get_field('is_example')) {
     var_export($block['style']['spacing']['margin']);
 
     echo '</pre>';
-    echo 'Test';
+    echo '<p>Test</p>';
     
     //var_dump($block['example']['attributes']['cover']);
 }
