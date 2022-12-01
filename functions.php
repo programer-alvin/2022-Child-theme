@@ -13,6 +13,9 @@ function test_woo() {
 	echo 'abc';
 }
 
+//inc
+require_once trailingslashit( get_stylesheet_directory() ) . '/inc/inc.php';
+
 // cpts
 require_once trailingslashit( get_stylesheet_directory() ) . '/cpts/cpts.php';
 
