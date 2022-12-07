@@ -1,0 +1,22 @@
+/*https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#style
+https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#frontend-enqueueing
+https://drive.google.com/file/d/1u7ZmHE1y-Qd-IXY_mho3CPwAGWMU_48i/view?usp=sharing*/
+
+.slider {
+    padding: 0 0 5px;
+}
+.slider .slides img {
+    height: 80vh;
+    width: auto;
+    padding: 2vh;
+}
+.slider.is-admin:before {
+    display: block;
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 40px;
+    position: absolute;
+    z-index: 1;
+}

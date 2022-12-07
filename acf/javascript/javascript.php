@@ -85,6 +85,19 @@
                 // return
                 return json;        
             });
+
+
+
+
+            acf.add_filter('google_map_args', function( args, field ){
+
+                // do something to args
+                    console.log('args');
+
+                // return
+                return args;
+
+            });
         })(jQuery);	
 
 
