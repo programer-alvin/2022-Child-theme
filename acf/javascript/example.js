@@ -12,3 +12,16 @@ acf.add_filter('date_picker_args', function( args, $field ){
 	return args;
 			
 });
+
+
+//https://support.advancedcustomfields.com/forums/topic/target-repeater-sub-field-with-javascript/
+// where field_6391cd51b9989 is a sub-field in my repeater
+acf.addAction("new_field/key=field_6391cd51b9989", function ($field) {
+
+    $field.on("change", function (e) {
+        var value = $field.val();
+        console.log(value);
+    });
+});
+
+
