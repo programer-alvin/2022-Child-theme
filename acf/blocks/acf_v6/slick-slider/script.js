@@ -16,16 +16,20 @@
      * @return  void
      */
     var initializeBlock = function( $block ) {
-        $block.find('.slides').slick({
-            dots: true,
-            infinite: true,
-            speed: 300,
-            slidesToShow: 1,
-            centerMode: true,
-            variableWidth: true,
-            adaptiveHeight: true,
-            focusOnSelect: true
-        });     
+        try {
+            $block.find('.slides').slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                centerMode: true,
+                variableWidth: true,
+                adaptiveHeight: true,
+                focusOnSelect: true
+            });   
+        } catch (error) {
+                
+        }  
         
     }
 

@@ -14,3 +14,5 @@ require_once trailingslashit( get_stylesheet_directory() ) . '/acf/location-rule
 require_once $tttc_acf_dir.'/rest-api/rest-api.php';
 //Menu related code
 require_once $tttc_acf_dir.'/menu/menu.php';
+//Settings related code
+require_once $tttc_acf_dir.'/settings.php';

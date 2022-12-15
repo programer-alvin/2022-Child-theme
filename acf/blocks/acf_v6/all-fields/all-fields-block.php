@@ -10,7 +10,7 @@ function tttc_register_test_block() {
 }
 add_action( 'init', 'tttc_register_test_block' );
 
-//echo __DIR__ . '/all-fields-block.json';//for testing the file system path.
+// echo __DIR__ . '/all-fields-block.json';//for testing the file system path.
 
 
 function tttc_no_fields_assigned_message( $message, $block_name ) {
