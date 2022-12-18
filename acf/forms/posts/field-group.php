@@ -9,8 +9,8 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 			'fields'                => array(
 				array(
 					'key'               => 'field_62fea3601581c',
-					'label'             => 'Repeater',
-					'name'              => 'repeater',
+					'label'             => 'Form Repeater',
+					'name'              => 'form_repeater',
 					'type'              => 'repeater',
 					'instructions'      => '',
 					'required'          => 0,

@@ -18,3 +18,6 @@ require_once $tttc_acf_dir.'/menu/menu.php';
 require_once $tttc_acf_dir.'/settings.php';
 //Options pages related code
 require_once $tttc_acf_dir.'/options-pages/options-pages.php';
+//Custom shortcode related code
+require_once $tttc_acf_dir.'/custom-shortcodes/custom-shortcodes.php';
+
