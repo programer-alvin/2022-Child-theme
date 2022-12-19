@@ -29,3 +29,35 @@ function tttc_slick_slider_block_scripts() {
 }
  add_action( 'admin_enqueue_scripts', 'tttc_slick_slider_block_scripts' );// allows acf/slick-slider-block block preview to be fired in the admin
 
+
+
+
+function my_acf_add_local_field_groups() {
+
+	acf_add_local_field_group(
+		array(
+			'key'      => 'group_1',
+			'title'    => 'My Group',
+			'fields'   => array(
+				array(
+					'key'   => 'field_1',
+					'label' => 'Sub Title',
+					'name'  => 'sub_title',
+					'type'  => 'text',
+				),
+			),
+			'location' => array(
+				array(
+					array(
+						'param'    => 'post_type',
+						'operator' => '==',
+						'value'    => 'post',
+					),
+				),
+			),
+		)
+	);
+
+}
+
+   add_action( 'acf/init', 'my_acf_add_local_field_groups' );
