@@ -1,5 +1,7 @@
 <?php
 // https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#wpdefinedasset
+// https://drive.google.com/file/d/156fRNven2if5TikYSsLVST2ZoCYBcmeK/view?usp=sharing
+// https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#frontend-enqueueing
 return array(
 	'dependencies' => array(
 		'wp-blocks',
