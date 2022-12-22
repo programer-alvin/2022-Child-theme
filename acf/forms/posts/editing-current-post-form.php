@@ -1,6 +1,7 @@
 <?php
 // https://www.advancedcustomfields.com/resources/acf_form/
 // https://www.advancedcustomfields.com/resources/acf_register_form/
+// https://www.advancedcustomfields.com/resources/acf_form/#editing-a-specific-post
 get_header();
 ?>
 <?php acf_form_head(); ?>
@@ -18,10 +19,10 @@ get_header();
 				'post_id'      => get_the_ID(),
 				'post_title'   => false,
 				'post_content' => false,
-				'submit_value' => __( 'Update meta' ),
 				// 'fields'       => array( 'field_62fea3edd36a3' ),
 				'field_groups' => array( 'group_62fea3503ab1e' ),
 				'uploader'     => 'wp',
+				'submit_value' => __( 'Update meta' ),
 			)
 		);
 		?>
