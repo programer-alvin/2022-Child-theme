@@ -1,23 +1,23 @@
 <?php
-function tttc_register_cpt_test() {
+function tttc_register_cpt_member() {
 
 	/**
 	 * Post Type: Tests.
 	 */
 
 	$labels = [
-		"name" => __( "Tests", "twentytwentytwo" ),
-		"singular_name" => __( "Test", "twentytwentytwo" ),
+		"name" => __( "Members", "twentytwentytwo" ),
+		"singular_name" => __( "Member", "twentytwentytwo" ),
 	];
 
 	$args = [
-		"label" => __( "Tests", "twentytwentytwo" ),
+		"label" => __( "Members", "twentytwentytwo" ),
 		"labels" => $labels,
 		"description" => "",
 		"public" => true,
 		"publicly_queryable" => true,
 		"show_ui" => true,
-		"show_in_rest" => true,
+		/*//"show_in_rest" => true,
 		//"rest_base" => "",
 		//"rest_controller_class" => "WP_REST_Posts_Controller",
 		"rest_namespace" => "wp/v2",
@@ -30,13 +30,15 @@ function tttc_register_cpt_test() {
 		"map_meta_cap" => true,
 		"hierarchical" => false,
 		"can_export" => false,
-		"rewrite" => [ "slug" => "test", "with_front" => true ],
+		"rewrite" => [ "slug" => "member", "with_front" => true ],
 		"query_var" => true,
 		"supports" => [ "title", "editor", "thumbnail" ],
-		"show_in_graphql" => false,
+		"show_in_graphql" => false,*/
 	];
 
-	register_post_type( "test", $args );
+	register_post_type( "member", $args );
 }
 
-add_action( 'init', 'tttc_register_cpt_test' );
+add_action( 'init', 'tttc_register_cpt_member' );
+
+require_once $tttc_cpts_dir . '/members/field-group.php';
