@@ -27,7 +27,7 @@ const event = new Event('unique_event_name');
 document.dispatchEvent(event);
 ```
 
-### Listen to the event'
+### Listen to the event
 
 ```JAVASCRIPT
 document.addEventListener('unique_event_name', function () {

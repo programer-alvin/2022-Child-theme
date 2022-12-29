@@ -22,3 +22,5 @@ require_once $tttc_acf_dir.'/options-pages/options-pages.php';
 require_once $tttc_acf_dir.'/custom-shortcodes/custom-shortcodes.php';
 //filters and actions related code
 require_once $tttc_acf_dir.'/filters-and-actions/filters-and-actions.php';
+//custom function that have ACF related code.
+require_once $tttc_acf_dir.'/custom-functions.php/functions.php';
