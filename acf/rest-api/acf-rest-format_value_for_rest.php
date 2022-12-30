@@ -38,7 +38,9 @@ add_filter(
 		if ( 'relationship' === $field['type'] ) {
 			if ( is_array( $value_formatted ) ) {
 				foreach ( $value_formatted as &$post ) {
-					$post->acf = tttc_get_fields_by_post_id( $post->ID );
+					if ( ! is_int( $post  ) ) {
+						$post->acf = tttc_get_fields_by_post_id( $post->ID );
+					}
 				}
 			}
 			return $value_formatted;
@@ -50,7 +52,7 @@ add_filter(
 					}
 				}
 			}
-			if ( ! is_int( $post ) ) { // Ensure the only post objects are processed.
+			if (!empty($value_formatted) && ! is_int( $value_formatted ) ) { // Ensure the only post objects are processed.
 				$value_formatted->acf = tttc_get_fields_by_post_id( $value_formatted->ID );
 			}
 		}
