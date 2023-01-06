@@ -16,6 +16,8 @@ require_once $tttc_acf_dir.'/rest-api/rest-api.php';
 require_once $tttc_acf_dir.'/menu/menu.php';
 //Settings related code
 require_once $tttc_acf_dir.'/settings.php';
+//Global field groups
+require_once $tttc_acf_dir.'/field_groups.php';
 //Options pages related code
 require_once $tttc_acf_dir.'/options-pages/options-pages.php';
 //Custom shortcode related code
