@@ -25,12 +25,23 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 		echo '<img src="' . $cover . '" alt="block-preview-screenshot">';
 	}
 } else {
-	$clone_block_heading=get_field('block_heading_block_heading');//clone field name
+	$clone_block_heading = get_field( 'block_heading_block_heading' );// clone field name
+
+	echo '<p>Class Name contains selected style</p>';
+	echo '<pre>';
+	var_export( $block['className'] );
+	echo '</pre>';
+
+	echo '<p>Style</p>';
+	echo '<pre>';
+	var_export( $block['styles'] );
+	echo '</pre>';
+
 	echo '<p>block_heading</p>';
 	echo '<pre>';
-	var_export(  $clone_block_heading);
+	var_export( $clone_block_heading );
 	echo '</pre>';
-	
+
 
 	/* Render live block HTML on this section*/
 	echo '<pre>';
@@ -52,10 +63,10 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 	echo '<pre>';
 	var_export( $block['textColor'] );
 	echo '</pre>';
-	
+
 	echo '<p>Block</p>';
 	echo '<pre>';
-	var_export( $block);
+	var_export( $block );
 	echo '</pre>';
 	echo '<p>Test</p>';
 
@@ -70,7 +81,7 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 				wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
 			}
 			add_action( 'wp_enqueue_scripts', 'wpdoc_theme_name_scripts' );
-	
+
 		}
 	}
 }
