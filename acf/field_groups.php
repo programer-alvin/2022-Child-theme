@@ -1070,3 +1070,118 @@ color : red;
 ));
 
 endif;		
+
+
+if( function_exists('acf_add_local_field_group') ):
+
+	acf_add_local_field_group(array(
+		'key' => 'group_63ca6f6822661',
+		'title' => 'Repeater to sort',
+		'fields' => array(
+			array(
+				'key' => 'field_63ca6f6a62cff',
+				'label' => 'Repeater to sort',
+				'name' => 'repeater_to_sort',
+				'aria-label' => '',
+				'type' => 'repeater',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'layout' => 'table',
+				'pagination' => 0,
+				'min' => 0,
+				'max' => 0,
+				'collapsed' => '',
+				'button_label' => 'Add Row',
+				'rows_per_page' => 20,
+				'sub_fields' => array(
+					array(
+						'key' => 'field_63ca6f9c62d00',
+						'label' => 'Sub Field 1',
+						'name' => 'sub_field_1',
+						'aria-label' => '',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'maxlength' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'parent_repeater' => 'field_63ca6f6a62cff',
+					),
+					array(
+						'key' => 'field_63ca6fcc62d01',
+						'label' => 'Sub Field 2',
+						'name' => 'sub_field_2',
+						'aria-label' => '',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'maxlength' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'parent_repeater' => 'field_63ca6f6a62cff',
+					),
+					array(
+						'key' => 'field_63ca6fd962d02',
+						'label' => 'Sub Field 3',
+						'name' => 'sub_field_3',
+						'aria-label' => '',
+						'type' => 'date_picker',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'display_format' => 'd/m/Y',
+						'return_format' => 'd/m/Y',
+						'first_day' => 1,
+						'parent_repeater' => 'field_63ca6f6a62cff',
+					),
+				),
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+		'show_in_rest' => 0,
+	));
+	
+	endif;		
