@@ -3,6 +3,7 @@
 // https://drive.google.com/file/d/156fRNven2if5TikYSsLVST2ZoCYBcmeK/view?usp=sharing
 // https://developer.wordpress.org/block-editor/reference-guides/block-api/block-metadata/#frontend-enqueueing
 return array(
+	'handle'       => 'all-fields-script-handle',
 	'dependencies' => array(
 		'wp-blocks',
 		'wp-element',

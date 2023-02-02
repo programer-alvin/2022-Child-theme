@@ -27,6 +27,18 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 } else {
 	$clone_block_heading = get_field( 'block_heading_block_heading' );// clone field name
 
+	echo '<p>Get Field using key</p>';
+	echo '<pre>';
+	var_export( get_field( 'field_616c12495b1da' ) );
+	echo '</pre>';
+
+
+	echo '<p>Get Field using name</p>';
+	echo '<pre>';
+	var_export( get_field( 'text' ) );
+	echo '</pre>';
+
+
 	echo '<p>Class Name contains selected style</p>';
 	echo '<pre>';
 	var_export( $block['className'] );
