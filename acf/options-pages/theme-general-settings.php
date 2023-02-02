@@ -6,6 +6,7 @@ if( function_exists('acf_add_options_page') ) {
         'page_title'    => 'Theme General Settings',
         'menu_title'    => 'Theme Settings',
         'menu_slug'     => 'theme-general-settings',
+        'icon_url'		=> 'dashicons-buddicons-replies',
         'capability'    => 'edit_posts',
         'redirect'      => false
     ));
