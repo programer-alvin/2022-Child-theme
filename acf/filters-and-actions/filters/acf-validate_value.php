@@ -16,7 +16,7 @@ function tttc_unique_value( $valid, $value, $field, $input_name ) {
 }
 
 // Apply to all fields.
-add_filter( 'acf/validate_value/name=text', 'tttc_unique_value', 10, 4 );
+// add_filter( 'acf/validate_value/name=text', 'tttc_unique_value', 10, 4 );
 
 
 function tttc_is_unique( $field, $value ) {

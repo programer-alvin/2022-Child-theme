@@ -61,3 +61,22 @@ function my_acf_add_local_field_groups() {
 }
 
    add_action( 'acf/init', 'my_acf_add_local_field_groups' );
+
+
+
+
+   // [bartag foo="foo-value"]
+function bartag_func( $atts ) {
+	$a = shortcode_atts(
+		array(
+			'foo' => 'something',
+			'bar' => 'something else',
+		),
+		$atts
+	);
+
+	//global $query;
+	//$query->the_post();
+	return 'shortcode test: ' + json_encode(get_the_ID());
+}
+add_shortcode( 'our_test', 'bartag_func' );
