@@ -129,6 +129,11 @@ function tttc_inline_acf_admin_enqueue_scripts() {
 		};
 
 		acf.addAction('append_field', myCallback);
+		acf.addAction('hide_field', function( field ){
+
+			console.log('hide_field');
+
+		});  
 
 		</script>
 	<?php
