@@ -13,16 +13,16 @@ add_filter(
 	5
 );*/
 
-/*
+/**/
 add_filter(
 	'acf/rest/format_value_for_rest',
 	function ( $value_formatted, $post_id, $field, $value, $format ) {
-		if ($field['name'] == 'text' ) {//Limiting to specific field name
+		if ( $field['name'] == 'field_name' ) {// Limiting to specific field name
 			$post   = get_post( $post_id );// retrieve the post
-			$blocks = parse_blocks( $post->post_content );//https://developer.wordpress.org/reference/functions/parse_blocks/
+			$blocks = parse_blocks( $post->post_content );// https://developer.wordpress.org/reference/functions/parse_blocks/
 			return array(
-				'value' => $value_formatted,
-				'field' => $field,
+				'value'  => $value_formatted,
+				'field'  => $field,
 				'blocks' => $blocks,
 			);
 		}
@@ -30,7 +30,7 @@ add_filter(
 	},
 	10,
 	5
-);*/
+);
 
 add_filter(
 	'acf/rest/format_value_for_rest',
@@ -38,7 +38,7 @@ add_filter(
 		if ( 'relationship' === $field['type'] ) {
 			if ( is_array( $value_formatted ) ) {
 				foreach ( $value_formatted as &$post ) {
-					if ( ! is_int( $post  ) ) {
+					if ( ! is_int( $post ) ) {
 						$post->acf = tttc_get_fields_by_post_id( $post->ID );
 					}
 				}
@@ -52,7 +52,7 @@ add_filter(
 					}
 				}
 			}
-			if (!empty($value_formatted) && ! is_int( $value_formatted ) ) { // Ensure the only post objects are processed.
+			if ( ! empty( $value_formatted ) && ! is_int( $value_formatted ) ) { // Ensure the only post objects are processed.
 				$value_formatted->acf = tttc_get_fields_by_post_id( $value_formatted->ID );
 			}
 		}
