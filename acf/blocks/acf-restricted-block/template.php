@@ -8,6 +8,8 @@
  * @param   (int|string) $post_id The post ID this block is saved to.
  */
 
+ //https://wpengine.com/resources/create-great-wordpress-editing-experience-save-time-gutenberg-innerblocks/
+
 if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/forums/topic/register-block-preview-image-with-acf_register_block_type/
 	// Render preview screenshot/html on this section
 	if ( array_key_exists( 'example', $block ) ) {
