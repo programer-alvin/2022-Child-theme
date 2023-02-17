@@ -41,7 +41,7 @@ class My_ACF_Location_Post_Author_Role extends ACF_Location {
         }
 
         // Compare the Post's author role attribute to rule value.
-        tttc_log(json_encode($post->post_author));
+        //tttc_log(json_encode($post->post_author));
         $user_meta = get_userdata($post->post_author);
         $user_roles = $user_meta->roles;
         

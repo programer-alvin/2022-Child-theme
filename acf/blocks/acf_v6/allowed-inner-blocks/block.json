@@ -1,0 +1,77 @@
+{
+    "name": "acf/acf-allowed-inner-blocks",
+    "title": "Allowed Inner Blocks",
+    "description": "A simple test",
+    "style": "file:./all-fields-block.css",
+    "category": "theme",
+    "icon": "admin-comments",
+    "apiVersion": 2,
+    "keywords": [
+        "test",
+        "quote"
+    ],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "template.php",
+        "postTypes": [
+            "post"
+        ]
+    },
+    "styles": [
+        {
+            "name": "default",
+            "label": "Default",
+            "isDefault": true
+        },
+        {
+            "name": "red",
+            "label": "Red"
+        },
+        {
+            "name": "green",
+            "label": "Green"
+        },
+        {
+            "name": "blue",
+            "label": "Blue"
+        }
+    ],
+    "supports": {
+        "align": true,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": true,
+            "background": true,
+            "link": true
+        },
+        "alignText": true,
+        "spacing": {
+            "margin": [
+                "top",
+                "bottom"
+            ],
+            "padding": true
+        },
+        "typography": {
+            "lineHeight": true,
+            "fontSize": true
+        },
+        "fullHeight": true
+        
+    },
+    "attributes": {
+        "backgroundColor": {
+            "type": "string",
+            "default": "purple"
+        }
+    },
+    "example": {
+        "attributes": {
+            "data": {
+                "text": "This is an example text field",
+                "text_area": "This is an example text area field"
+            }
+        }
+    }
+}

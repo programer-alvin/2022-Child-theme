@@ -17,7 +17,7 @@ function tttc_acf_init_blocks() {
 				'mode'            => 'preview',
 				'supports'        => array(
 					'align' => true,
-					'mode'  => false,
+					'mode'  => 'auto',// set it to false when you want to disable edit/preview mode
 					'jsx'   => true,
 				),
 				'example'         => array(

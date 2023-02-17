@@ -75,8 +75,8 @@ function bartag_func( $atts ) {
 		$atts
 	);
 
-	//global $query;
-	//$query->the_post();
-	return 'shortcode test: ' + json_encode(get_the_ID());
+	// global $query;
+	// $query->the_post();
+	return 'shortcode test: ' + json_encode( get_the_ID() );
 }
 add_shortcode( 'our_test', 'bartag_func' );
