@@ -2,6 +2,7 @@
 /**
  * Allows to filter by meta key(text_area) and meta value.
  * Reference: https://kayart.dev/wp-rest-api-how-to-filter-posts-by-a-meta-field/
+ * Reference: https://maheshwaghmare.com/search-post-by-post-meta-with-rest-api/
  */
 
  $post_type = 'post';
