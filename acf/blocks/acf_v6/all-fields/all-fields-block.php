@@ -1,9 +1,6 @@
 <?php
 // register_block_type( '/acf/blocks/acf_v6/all-fields/all-fields-block.json' );
-
 require_once trailingslashit( get_stylesheet_directory() ) . '/acf/blocks/acf_v6/all-fields/field-group.php';
-
-
 
 function tttc_register_test_block() {
 	register_block_type( __DIR__ . '/block.json' );
