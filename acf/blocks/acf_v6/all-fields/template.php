@@ -8,7 +8,6 @@ var_export($block);
 echo '</pre>';*/
 
 
-
 if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/forums/topic/register-block-preview-image-with-acf_register_block_type/
 	/* Render preview screenshot/html on this section*/
 	if ( array_key_exists( 'example', $block ) ) {
@@ -44,7 +43,7 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 	var_export( $block['className'] );
 	echo '</pre>';
 
-	echo '<p>Style</p>';
+	echo '<p>Styles</p>';
 	echo '<pre>';
 	var_export( $block['styles'] );
 	echo '</pre>';
@@ -56,15 +55,28 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 
 
 	/* Render live block HTML on this section*/
+	echo "<p>['style']['spacing']['margin']</p>";
 	echo '<pre>';
 	var_export( $block['style']['spacing']['margin'] );
 	echo '</pre>';
-	echo '<p>Style</p>';
+	echo "<p>Block Gap: ['style']['spacing']['blockGap']</p>";
+	echo '<pre>';
+	var_export( $block['style']['spacing']['blockGap'] );
+	echo '</pre>';
+	echo "<p>Style: ['style']</p>";
 	echo '<pre>';
 	var_export( $block['style'] );
 	echo '</pre>';
 	echo '<p>Link color</p>';
 	echo '<pre>';
+
+	$spacing_css = tttc_convert_spacing_array_to_css( $block['style']['spacing']['margin'] );// acf/blocks/blocks-helpers.php
+	$block_css = '.' . $block['className'] . ' {' . $spacing_css . '}';
+	echo '<p>Code Generated Spacing css</p>';
+	echo '<pre>';
+	var_dump( $block_css );
+	echo '</pre>';
+
 	var_export( $block['style']['elements']['link']['color'] );
 	echo '</pre>';
 	echo '<p>backgroundColor</p>';
@@ -97,6 +109,12 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 		}
 	}
 }
+
+
+
+
+
+
 
 
 
