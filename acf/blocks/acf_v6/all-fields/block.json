@@ -78,6 +78,6 @@
     "script": "file:./script.js",
     "viewScript": [ "file:./view.js", "example-shared-view-script" ],
     "editorStyle": "file:./index.css",
-    "style": [ "file:./style.css"]
+    "style": [ "file:../../assets/global-block-style.css", "file:./style.css"]
 
 }

@@ -1,0 +1,87 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 2022 child\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-01 11:52+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.3; wp-6.1.1\n"
+"X-Domain: twentytwentytwo"
+
+#. Name of the theme
+msgid "2022 child"
+msgstr ""
+
+#. Description of the theme
+msgid "2022 Child Theme."
+msgstr ""
+
+#. Author of the theme
+msgid "amm"
+msgstr ""
+
+#. Name of the template
+msgid "Create a Specific Post Form"
+msgstr ""
+
+#. Name of the template
+msgid "Editing Current Post Form"
+msgstr ""
+
+#. Name of the template
+msgid "Form"
+msgstr ""
+
+#. Name of the template
+msgid "Get all fields"
+msgstr ""
+
+#. Name of the template
+msgid "Get block data from a post"
+msgstr ""
+
+#. Name of the template
+msgid "Get Field"
+msgstr ""
+
+#. Name of the template
+msgid "Get fields associated with a post"
+msgstr ""
+
+#: cpts/members/members.php:10
+msgid "Member"
+msgstr ""
+
+#. Name of the template
+#: cpts/members/members.php:9 cpts/members/members.php:14
+msgid "Members"
+msgstr ""
+
+#. Name of the template
+msgid "Private Test"
+msgstr ""
+
+#. Name of the template
+msgid "Script"
+msgstr ""
+
+#. Name of the template
+msgid "Sort Repeater"
+msgstr ""
+
+#. Name of the template
+#: cpts/tests/tests.php:10
+msgid "Test"
+msgstr ""
+
+#: cpts/tests/tests.php:9 cpts/tests/tests.php:14
+msgid "Tests"
+msgstr ""
