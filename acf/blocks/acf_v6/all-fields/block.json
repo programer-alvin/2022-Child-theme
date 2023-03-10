@@ -2,7 +2,7 @@
     "name": "acf/all-fields-block",
     "title": "All Fields Test Block",
     "description": "All fields test block",
-    "category": "theme",
+    "category": "tttc-acf-category",
     "icon": "admin-comments",
     "apiVersion": 2,
     "keywords": [

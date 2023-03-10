@@ -3,7 +3,7 @@
     "title": "Allowed Inner Blocks",
     "description": "A simple test",
     "style": "file:./all-fields-block.css",
-    "category": "theme",
+    "category": "tttc-acf-category",
     "icon": "admin-comments",
     "apiVersion": 2,
     "keywords": [

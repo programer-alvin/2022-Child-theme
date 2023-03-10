@@ -2,7 +2,7 @@
     "name": "acf/acf-inner-block",
     "title": "Inner Block",
     "description": "A simple test",
-    "category": "theme",
+    "category": "tttc-acf-category",
     "icon": "admin-comments",
     "apiVersion": 2,
     "keywords": [
