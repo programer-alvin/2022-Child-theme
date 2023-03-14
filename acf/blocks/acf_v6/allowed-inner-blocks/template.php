@@ -8,7 +8,6 @@
  * @param   string $content The block inner HTML (empty).
  * @param   bool $is_preview True during AJAX preview.
  * @param   (int|string) $post_id The post ID this block is saved to.
- *
  */
 
 // Create id attribute allowing for custom "anchor" value.
@@ -37,14 +36,28 @@ if ( ! empty( $block['align'] ) ) {
 			// Set up innerBlocks and provide a template.
 
 			// Restrict InnerBlocks to allowed block list.
-			$allowed_blocks = array( 'core/heading', 'core/paragraph', 'core/buttons' );
+			$allowed_blocks = array( 'acf/all-fields-block', 'core/heading', 'core/paragraph', 'core/buttons' );
 
 			// Start InnerBlocks with a template.
 			$template = array(
 				array(
+					'acf/all-fields-block',
+					array(
+						'align' => 'center',
+						'lock'  => array(
+							'move'   => true, // Block may not be moved.
+							'remove' => true, // Block may not be removed.
+						),
+						'data'  =>
+							array(
+								'field_616c12495b1da' => 'Test data from allowed inner block template',
+							),
+					),
+				),
+				array(
 					'core/heading',
 					array(
-						'placeholder' => __( 'Heading', 'locale' ),
+						'placeholder' => __( 'Testing Heading', 'locale' ),
 						'align'       => 'center',
 						'level'       => '2',
 						'lock'        => array(
