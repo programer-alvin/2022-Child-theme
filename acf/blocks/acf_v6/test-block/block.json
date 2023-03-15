@@ -1,0 +1,76 @@
+{
+    "name": "acf/test-block",
+    "title": "Test Block",
+    "description": "Test block",
+    "category": "tttc-acf-category",
+    "icon": "building",
+    "apiVersion": 2,
+    "keywords": [
+        "test",
+        "quote"
+    ],
+    "acf": {
+        "mode": "preview",
+        "postTypes": [
+            "post"
+        ]
+    },
+    "styles": [
+        {
+            "name": "default",
+            "label": "Default",
+            "isDefault": true
+        },
+        {
+            "name": "red",
+            "label": "Red"
+        },
+        {
+            "name": "green",
+            "label": "Green"
+        },
+        {
+            "name": "blue",
+            "label": "Blue"
+        }
+    ],
+    "supports": {
+        "align": true,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": true,
+            "background": true,
+            "link": true
+        },
+        "alignText": true,
+        "spacing": {
+            "margin": true,
+            "padding": true,
+            "blockGap": true 
+        },
+        "typography": {
+            "lineHeight": true,
+            "fontSize": true
+        },
+        "fullHeight": true
+    },
+    "attributes": {
+        "backgroundColor": {
+            "type": "string",
+            "default": "purple"
+        }
+    },
+    "example": {
+        "attributes": {
+            "cover": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+            "author": "Alvin Muthui",
+            "data": {
+                "text": "This is an example text field",
+                "text_area": "This is an example text area field",
+                "is_example" :true
+            }
+        }
+    }
+
+}
