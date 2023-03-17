@@ -1,5 +1,5 @@
 {
-    "name": "acf/test-block",
+    "name": "acf/args-block",
     "icon": "building",
     "apiVersion": 2,
     "acf": {
