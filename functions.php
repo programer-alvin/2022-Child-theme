@@ -60,6 +60,6 @@ function my_acf_add_local_field_groups() {
 
 }
 
-   add_action( 'acf/init', 'my_acf_add_local_field_groups' );
+add_action( 'acf/init', 'my_acf_add_local_field_groups' );
 
 add_filter( 'should_load_separate_core_block_assets', '__return_true' );// Allows assets to be loaded separately in themes such as Twenty Twenty One.
