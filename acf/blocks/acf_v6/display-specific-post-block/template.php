@@ -26,16 +26,16 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 } else {
 	$selected_post_to_display = get_field( 'select_post_to_display' );// 
 	if($selected_post_to_display){
+		$content= apply_filters('the_content', $selected_post_to_display->post_content);
 	?>
-
-		<div <?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>"  ?>">
+		<div <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?>">
 			<div class="block-title">
 				<h2>
 					<?php echo esc_html($selected_post_to_display->post_title)?>
 				</h2>
 			</div>
 			<div class="block-content">
-			<?php echo esc_html(do_shortcode( $selected_post_to_display->post_content ))?>
+				<?php echo  $content ?>
 			</div>
 		</div>
 	<?php
