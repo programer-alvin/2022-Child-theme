@@ -3,7 +3,7 @@
  * Converts date from one format to another
  *
  * @param [type] $date_string Date string.
- * @param [type] $current_date_formart the date formart for $date_string.
+ * @param [type] $current_date_format the date format for $date_string.
  * @param [type] $new_date_format the new desired date format.
  * @return string
  */
