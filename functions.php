@@ -65,17 +65,17 @@ add_action( 'acf/init', 'my_acf_add_local_field_groups' );
 add_filter( 'should_load_separate_core_block_assets', '__return_true' );// Allows assets to be loaded separately in themes such as Twenty Twenty One.
 
 
-function add_event_date_to_permalink($permalink, $post, $leavename) {
-    if ($post->post_type == 'event') {
-        $event_date = get_post_meta($post->ID, 'event_date', true);
+function add_event_date_to_permalink( $permalink, $post, $leavename ) {
+	if ( $post->post_type == 'event' ) {
+		$event_date = get_post_meta( $post->ID, 'event_date', true );
 		$event_date = tttc_convert_date_from_one_format_to_another( $event_date, 'Ymd', 'd-m-Y' );
-        if ($event_date) {
-            $permalink = str_replace('%event_date%', $event_date, $permalink);
-        }
-    }
-    return $permalink;
+		if ( $event_date ) {
+			$permalink = str_replace( '%event_date%', $event_date, $permalink );
+		}
+	}
+	return $permalink;
 }
-add_filter('post_type_link', 'add_event_date_to_permalink', 10, 3);
+add_filter( 'post_type_link', 'add_event_date_to_permalink', 10, 3 );
 
 
 function tttc_register_cpt_event() {
@@ -84,38 +84,57 @@ function tttc_register_cpt_event() {
 	 * Post Type: Events.
 	 */
 
-	$labels = [
-		"name" => esc_html__( "Events", "twentytwentytwo" ),
-		"singular_name" => esc_html__( "Event", "twentytwentytwo" ),
-	];
+	$labels = array(
+		'name'          => esc_html__( 'Events', 'twentytwentytwo' ),
+		'singular_name' => esc_html__( 'Event', 'twentytwentytwo' ),
+	);
 
-	$args = [
-		"label" => esc_html__( "Events", "twentytwentytwo" ),
-		"labels" => $labels,
-		"description" => "",
-		"public" => true,
-		"publicly_queryable" => true,
-		"show_ui" => true,
-		"show_in_rest" => true,
-		"rest_base" => "",
-		"rest_controller_class" => "WP_REST_Posts_Controller",
-		"rest_namespace" => "wp/v2",
-		"has_archive" => false,
-		"show_in_menu" => true,
-		"show_in_nav_menus" => true,
-		"delete_with_user" => false,
-		"exclude_from_search" => false,
-		"capability_type" => "post",
-		"map_meta_cap" => true,
-		"hierarchical" => false,
-		"can_export" => false,
-		"rewrite" => [ "slug" => "event/%postname%-%event_date%" ],// set permalink structure for specific cpt
-		"query_var" => true,
-		"supports" => [ "title", "editor", "thumbnail" ],
-		"show_in_graphql" => false,
-	];
+	$args = array(
+		'label'                 => esc_html__( 'Events', 'twentytwentytwo' ),
+		'labels'                => $labels,
+		'description'           => '',
+		'public'                => true,
+		'publicly_queryable'    => true,
+		'show_ui'               => true,
+		'show_in_rest'          => true,
+		'rest_base'             => '',
+		'rest_controller_class' => 'WP_REST_Posts_Controller',
+		'rest_namespace'        => 'wp/v2',
+		'has_archive'           => false,
+		'show_in_menu'          => true,
+		'show_in_nav_menus'     => true,
+		'delete_with_user'      => false,
+		'exclude_from_search'   => false,
+		'capability_type'       => 'post',
+		'map_meta_cap'          => true,
+		'hierarchical'          => false,
+		'can_export'            => false,
+		'rewrite'               => array( 'slug' => 'event/%postname%-%event_date%' ), // set permalink structure for specific cpt
+		'query_var'             => true,
+		'supports'              => array( 'title', 'editor', 'thumbnail' ),
+		'show_in_graphql'       => false,
+	);
 
-	register_post_type( "event", $args );
+	register_post_type( 'event', $args );
 }
 
 add_action( 'init', 'tttc_register_cpt_event' );
+
+
+?>
+
+<?php
+// Set the post ID where you want to insert the block
+$post_id = 1;
+
+// Set the block to be inserted
+$block = array(
+	'blockName' => 'core/paragraph',
+	'attrs'     => array(
+		'content' => 'This is the content of the paragraph block from insert_block() function.',
+	),
+);
+
+// Insert the block
+// insert_block( $block, '', $post_id );
+
