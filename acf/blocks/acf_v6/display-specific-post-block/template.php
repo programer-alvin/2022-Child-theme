@@ -24,22 +24,22 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 		echo '<img src="' . $cover . '" alt="block-preview-screenshot">';
 	}
 } else {
-	$selected_post_to_display = get_field( 'select_post_to_display' );// 
-	if($selected_post_to_display){
-		$content= apply_filters('the_content', $selected_post_to_display->post_content);
-	?>
+	$selected_post_to_display = get_field( 'select_post_to_display' );  if ( $selected_post_to_display ) {
+		$content = apply_filters( 'the_content', $selected_post_to_display->post_content );
+		echo do_shortcode( '[tttc_test]' );
+		?>
 		<div <?php echo $anchor; ?> class="<?php echo esc_attr( $class_name ); ?>">
 			<div class="block-title">
 				<h2>
-					<?php echo esc_html($selected_post_to_display->post_title)?>
+					<?php echo esc_html( $selected_post_to_display->post_title ); ?>
 				</h2>
 			</div>
 			<div class="block-content">
-				<?php echo  $content ?>
+				<?php echo $content; ?>
 			</div>
 		</div>
-	<?php
-	}else{
+		<?php
+	} else {
 		echo 'No post is selected';
 	}
 }

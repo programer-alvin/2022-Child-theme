@@ -138,3 +138,19 @@ $block = array(
 // Insert the block
 // insert_block( $block, '', $post_id );
 
+
+
+add_shortcode( 'tttc_test', 'tttc_test_shortcode' );
+function tttc_test_shortcode( $atts ) {
+	$atts = shortcode_atts(
+		array(
+			'foo' => 'no foo',
+			'baz' => 'default baz',
+		),
+		$atts,
+		'bartag'
+	);
+
+	return "foo = {$atts['foo']}";
+}
+

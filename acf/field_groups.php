@@ -1206,3 +1206,69 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 	);
 
 	endif;
+#------------------------------------------------------------------------------------------------------------------------
+if ( function_exists('acf_add_local_field_group') ):
+
+	acf_add_local_field_group(array(
+		'key' => 'group_64302bd747ad8',
+		'title' => 'Validate two date fields',
+		'fields' => array(
+			array(
+				'key' => 'field_64302bd842b7e',
+				'label' => 'start date',
+				'name' => 'start_date',
+				'aria-label' => '',
+				'type' => 'date_picker',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'display_format' => 'd/m/Y',
+				'return_format' => 'd/m/Y',
+				'first_day' => 1,
+			),
+			array(
+				'key' => 'field_64302c1942b7f',
+				'label' => 'End Date',
+				'name' => 'end_date',
+				'aria-label' => '',
+				'type' => 'date_picker',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'display_format' => 'd/m/Y',
+				'return_format' => 'd/m/Y',
+				'first_day' => 1,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+		'show_in_rest' => 0,
+	));
+	
+	endif;
+		
