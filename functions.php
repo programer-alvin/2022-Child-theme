@@ -153,4 +153,3 @@ function tttc_test_shortcode( $atts ) {
 
 	return "foo = {$atts['foo']}";
 }
-

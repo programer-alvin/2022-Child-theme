@@ -9,3 +9,4 @@ require_once $tttc_acf_v6_dir . 'display-specific-post-block/display-specific-po
 if( file_exists($tttc_acf_v6_dir . 'private-test-block/private-test-block.php')){
     require_once $tttc_acf_v6_dir . 'private-test-block/private-test-block.php';
 }
+require_once $tttc_acf_v6_dir . 'without-fields-block/without-fields-block.php';
