@@ -33,3 +33,25 @@ function tttc_is_unique( $field, $value ) {
 	return true;
 }
 
+
+function tttc_limit_password_size( $valid, $value, $field, $input_name ) {
+
+	// Bail early if value is already invalid.
+	if ( $valid !== true ) {
+		return $valid;
+	}
+
+	tttc_log('test password');
+	
+	tttc_log(strlen($value));
+	return __( 'Exceeds char limit.' );
+	if(strlen($value)>8){
+		return __( 'Exceeds char limit.' );
+	}
+	return $valid;
+}
+
+// Apply to all fields.
+ add_filter( 'acf/validate_value/type=password', 'tttc_limit_password_size', 10, 4 );
+ add_filter( 'acf/validate_value/name=text_area', 'tttc_limit_password_size', 10000, 4 );
+
