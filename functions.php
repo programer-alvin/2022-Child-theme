@@ -158,7 +158,7 @@ add_action( 'init', 'tttc_add_post_formats' );
 
 function tttc_add_post_formats() {
 	// https://wordpress.org/documentation/article/post-formats/#:~:text=A%20Post%20Format%20is%20a,every%20format%20on%20the%20list.
-	add_theme_support( 'post-formats', array( 'audio','video', 'aside', 'gallery' ) );
+	add_theme_support( 'post-formats', array( 'audio', 'video', 'aside', 'gallery' ) );
 	// https://wordpress.org/documentation/article/post-formats/#adding-post-type-support
 	add_post_type_support( 'page', 'post-formats' );
 	add_post_type_support( 'post', 'post-formats' );
