@@ -1,6 +1,6 @@
 <?php
 /*
- Template Name: Form
+ Template Name: Custom Post Template-All Fields
 *  Template Post Type: post, page, test
 */
 ?>
@@ -9,25 +9,23 @@
 
 <div id="primary" class="content-area">
 	<div id="content" class="site-content" role="main">
-	<?php
-	while ( have_posts() ) :
-		the_post();
+	<?php 
+		$rows = get_field('repeater');
+		echo '<pre>';
+		var_dump($rows);
+		echo '</pre>';
+		if( $rows ) {
+			echo '<ul class="slides">';
+			foreach( $rows as $row ) {
+				$image = $row['image'];
+				echo '<li>';
+					echo wp_get_attachment_image( $image, 'full' );
+					echo wpautop( $row['caption'] );
+				echo '</li>';
+			}
+			echo '</ul>';
+		}
 		?>
-		<?php
-		acf_form(
-			array(
-				'post_id'      => 1983,
-				'post_title'   => true,
-				'post_content' => true,
-				'new_post'     => array(
-					'post_type'   => 'post',
-					'post_status' => 'publish',
-				),
-				'submit_value' => 'Create new post',
-			)
-		);
-		?>
-	<?php endwhile; ?>
 
 	
 	</div><!-- #content -->

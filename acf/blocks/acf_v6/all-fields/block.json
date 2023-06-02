@@ -59,7 +59,20 @@
     "attributes": {
         "backgroundColor": {
             "type": "string",
-            "default": "purple"
+            "default": "vivid-purple"
+        },
+        "align": {
+            "type": "string",
+            "default": "wide"
+        },
+        "style": {
+            "type": "array",
+            "default": {
+                "margin": "20px",
+                "padding": {
+                    "top": "20px"
+                }
+            }
         }
     },
     "example": {

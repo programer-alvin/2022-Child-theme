@@ -163,3 +163,15 @@ function tttc_add_post_formats() {
 	add_post_type_support( 'page', 'post-formats' );
 	add_post_type_support( 'post', 'post-formats' );
 }
+
+
+
+
+
+acf_add_options_sub_page(
+	array(
+		'page_title'  => 'Theme Header Settings',
+		'menu_title'  => 'Header Test',
+		'parent_slug' => 'themes.php',
+	)
+);

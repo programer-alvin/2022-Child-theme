@@ -1,20 +1,22 @@
 <?php
 function tttc_convert_spacing_array_to_css($spacing_array) {
     $css = '';
-    foreach ($spacing_array as $key => $value) {
-        switch ($key) {
-            case 'top':
-                $css .= 'margin-top: ' . tttc_get_css_variable($value) . ';';
-                break;
-            case 'right':
-                $css .= 'margin-right: ' . tttc_get_css_variable($value) . ';';
-                break;
-            case 'bottom':
-                $css .= 'margin-bottom: ' . tttc_get_css_variable($value) . ';';
-                break;
-            case 'left':
-                $css .= 'margin-left: ' . tttc_get_css_variable($value) . ';';
-                break;
+    if(is_array($spacing_array)){
+        foreach ($spacing_array as $key => $value) {
+            switch ($key) {
+                case 'top':
+                    $css .= 'margin-top: ' . tttc_get_css_variable($value) . ';';
+                    break;
+                case 'right':
+                    $css .= 'margin-right: ' . tttc_get_css_variable($value) . ';';
+                    break;
+                case 'bottom':
+                    $css .= 'margin-bottom: ' . tttc_get_css_variable($value) . ';';
+                    break;
+                case 'left':
+                    $css .= 'margin-left: ' . tttc_get_css_variable($value) . ';';
+                    break;
+            }
         }
     }
     return $css;

@@ -26,6 +26,7 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 } else {
 	$clone_block_heading = get_field( 'block_heading_block_heading' );// clone field name
 
+
 	echo '<p>Get Field using key</p>';
 	echo '<pre>';
 	var_export( get_field( 'field_616c12495b1da' ) );
@@ -38,10 +39,12 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 	echo '</pre>';
 
 
-	echo '<p>Class Name contains selected style</p>';
-	echo '<pre>';
-	var_export( $block['className'] );
-	echo '</pre>';
+	if(array_key_exists('className', $block)){
+		echo '<p>Class Name contains selected style</p>';
+		echo '<pre>';
+		var_export( $block['className'] );
+		echo '</pre>';
+	}
 
 	echo '<p>Styles</p>';
 	echo '<pre>';
@@ -71,7 +74,7 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 	echo '<pre>';
 
 	$spacing_css = tttc_convert_spacing_array_to_css( $block['style']['spacing']['margin'] );// acf/blocks/blocks-helpers.php
-	$block_css = '.' . $block['className'] . ' {' . $spacing_css . '}';
+	$block_css   = '.' . $block['className'] . ' {' . $spacing_css . '}';
 	echo '<p>Code Generated Spacing css</p>';
 	echo '<pre>';
 	var_dump( $block_css );
@@ -83,10 +86,12 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 	echo '<pre>';
 	var_export( $block['backgroundColor'] );
 	echo '</pre>';
-	echo '<p>textColor</p>';
-	echo '<pre>';
-	var_export( $block['textColor'] );
-	echo '</pre>';
+	if(array_key_exists('textColor',$block)){
+		echo '<p>textColor</p>';
+		echo '<pre>';
+		var_export( $block['textColor'] );
+		echo '</pre>';
+	}
 
 	echo '<p>Block</p>';
 	echo '<pre>';
