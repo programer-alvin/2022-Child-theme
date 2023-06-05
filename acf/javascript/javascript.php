@@ -98,6 +98,16 @@ function tttc_inline_acf_admin_enqueue_scripts() {
 				return args;
 
 			});
+
+			var field = acf.getField('field_616c12495b1da');
+			var element = field.$el[0];
+			var className = element.className;
+			var classList = element.classList;
+
+			console.log(field);
+			console.log(className);
+			console.log(classList);
+
 		})(jQuery);	
 
 
@@ -124,7 +134,7 @@ function tttc_inline_acf_admin_enqueue_scripts() {
 
 		var myCallback = function( field ){
 
-		    //alert('Special event');
+			//alert('Special event');
 		
 		};
 
