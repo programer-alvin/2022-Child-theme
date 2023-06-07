@@ -1,11 +1,11 @@
 <?php
-//https://drive.google.com/file/d/1OlHHf6fmLbEmnn3RFmuaiklvlZdXxakI/view?usp=sharing
+// https://drive.google.com/file/d/1OlHHf6fmLbEmnn3RFmuaiklvlZdXxakI/view?usp=sharing
 if ( ! function_exists( 'tttc_acf_gallery_shortcode' ) ) {
 	function tttc_acf_gallery_shortcode( $atts ) {
 		$a       = shortcode_atts(
 			array(
-				'field'   => '',
-				'post_id' => false,
+				'field'   => '', // It is recommended to hardcode this  instead of allowing users to access any field.
+				'post_id' => false, // It is recommended to hardcode this instead of allowing users to access fields from any wordpress object.
 			),
 			$atts
 		);

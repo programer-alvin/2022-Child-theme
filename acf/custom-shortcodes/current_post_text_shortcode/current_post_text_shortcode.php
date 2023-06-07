@@ -3,7 +3,7 @@ if ( ! function_exists( 'tttc_acf_current_post_text_shortcode' ) ) {
 	function tttc_acf_current_post_text_shortcode( $atts ) {
 		$a     = shortcode_atts(
 			array(
-				'field' => '',
+				'field' => '', // It is recommended to hardcode this  instead of allowing users to access any field.
 			),
 			$atts
 		);
