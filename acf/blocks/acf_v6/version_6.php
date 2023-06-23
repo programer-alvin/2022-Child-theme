@@ -6,7 +6,8 @@ require_once $tttc_acf_v6_dir . 'slick-slider/slick-slider-block.php';
 require_once $tttc_acf_v6_dir . 'allowed-inner-blocks/allowed-inner-blocks.php';
 require_once $tttc_acf_v6_dir . 'args-block/args-block.php';
 require_once $tttc_acf_v6_dir . 'display-specific-post-block/display-specific-post-block.php';
-if( file_exists($tttc_acf_v6_dir . 'private-test-block/private-test-block.php')){
-    require_once $tttc_acf_v6_dir . 'private-test-block/private-test-block.php';
+if ( file_exists( $tttc_acf_v6_dir . 'private-test-block/private-test-block.php' ) ) {
+	require_once $tttc_acf_v6_dir . 'private-test-block/private-test-block.php';
 }
 require_once $tttc_acf_v6_dir . 'without-fields-block/without-fields-block.php';
+require_once $tttc_acf_v6_dir . 'register-blocks-automatically/register-blocks-automatically.php';

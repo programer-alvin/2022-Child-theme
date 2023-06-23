@@ -22,6 +22,8 @@ require_once trailingslashit( get_stylesheet_directory() ) . '/cpts/cpts.php';
 // acf
 require_once trailingslashit( get_stylesheet_directory() ) . '/acf/acf.php';
 
+// extended-functions
+require_once trailingslashit( get_stylesheet_directory() ) . '/extended-functions.php';
 
 // todo: Find a way to enqueue the script in acf/slick-slider-block and have the preview fired. Then remove the code below
 function tttc_slick_slider_block_scripts() {
