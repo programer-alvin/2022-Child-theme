@@ -1031,6 +1031,24 @@ color : red;
 					'multi_expand'      => 0,
 					'endpoint'          => 1,
 				),
+				array(
+					'key'               => 'field_618a6ae800781',
+					'label'             => '',
+					'name'              => '',
+					'aria-label'        => '',
+					'type'              => 'tab',
+					'instructions'      => '',
+					'required'          => 0,
+					'conditional_logic' => 0,
+					'wrapper'           => array(
+						'width' => '',
+						'class' => '',
+						'id'    => '',
+					),
+					'admin_only'        => 0,
+					'placement'         => 'left',
+					'endpoint'          => 1,
+				),
 			),
 			'location'              => array(
 				array(
