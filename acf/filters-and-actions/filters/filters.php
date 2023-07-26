@@ -9,3 +9,5 @@ require_once $tttc_acf_filters_dir . '/acf-load_field.php';
 require_once $tttc_acf_filters_dir . '/acf-load_field-type-flexible_content.php';
 require_once $tttc_acf_filters_dir . '/acf-fields-relationship-result.php';
 require_once $tttc_acf_filters_dir . '/acf-validate_value.php';
+require_once $tttc_acf_filters_dir . '/acf-render_field_settings.php';
+require_once $tttc_acf_filters_dir . '/acf-save_post.php';

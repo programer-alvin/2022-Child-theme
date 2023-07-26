@@ -1290,3 +1290,161 @@ if ( function_exists('acf_add_local_field_group') ):
 	
 	endif;
 		
+
+#------------------------------------------------------------------------------------------------------------------------
+	function register_custom_fields() {
+		acf_add_local_field_group(array(
+		  'key' => 'group_abcdef1',
+		  'title' => 'Repeater Field to be filtered by subfield',
+		  'fields' => array(
+			array(
+			  'key' => 'field_abcdef1',
+			  'label' => 'Repeater Field',
+			  'name' => 'repeater_field_29',
+			  'type' => 'repeater',
+			  'sub_fields' => array(
+				array(
+				  'key' => 'field_abcdef2',
+				  'label' => 'Sub 1',
+				  'name' => 'sub_1',
+				  'type' => 'text',
+				),
+				array(
+				  'key' => 'field_abcdef3',
+				  'label' => 'Sub 2',
+				  'name' => 'sub_2',
+				  'type' => 'text',
+				),
+				array(
+				  'key' => 'field_abcdef4',
+				  'label' => 'Sub 3',
+				  'name' => 'sub_3',
+				  'type' => 'text',
+				),
+				array(
+				  'key' => 'field_abcdef5',
+				  'label' => 'Sub 4',
+				  'name' => 'sub_4',
+				  'type' => 'text',
+				),
+			  ),
+			),
+		  ),
+		  'location' => array(
+			array(
+			  array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'post', // Change 'post' to the desired post type
+			  ),
+			),
+		  ),
+		));
+	  }
+	  add_action('acf/init', 'register_custom_fields');
+	  
+#------------------------------------------------------------------------------------------------------------------------
+	  add_action( 'acf/include_fields', function() {
+		if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+			return;
+		}
+	
+		acf_add_local_field_group( array(
+		'key' => 'group_64ba35c37eb4c',
+		'title' => 'Bidirection: Page',
+		'fields' => array(
+			array(
+				'key' => 'field_64ba35c5e6217',
+				'label' => 'My related posts',
+				'name' => 'my_related_posts',
+				'aria-label' => '',
+				'type' => 'post_object',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'post_type' => array(
+					0 => 'post',
+				),
+				'post_status' => '',
+				'taxonomy' => '',
+				'return_format' => 'object',
+				'multiple' => 1,
+				'allow_null' => 0,
+				'ui' => 1,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'page',
+				),
+			),
+		),
+		'menu_order' => -17,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+		'show_in_rest' => 0,
+	) );
+	
+		acf_add_local_field_group( array(
+		'key' => 'group_64ba3551e4ce1',
+		'title' => 'Bidirection: Post',
+		'fields' => array(
+			array(
+				'key' => 'field_64ba3554667e5',
+				'label' => 'My related page',
+				'name' => 'my_related_page',
+				'aria-label' => '',
+				'type' => 'post_object',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'post_type' => array(
+					0 => 'page',
+				),
+				'post_status' => '',
+				'taxonomy' => '',
+				'return_format' => 'object',
+				'multiple' => 1,
+				'allow_null' => 0,
+				'ui' => 1,
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+				),
+			),
+		),
+		'menu_order' => -9,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+		'show_in_rest' => 0,
+	) );
+	} );
+	

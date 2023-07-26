@@ -7,6 +7,7 @@ var_export($block);
 
 echo '</pre>';*/
 
+//var_dump($wp_block);
 
 if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/forums/topic/register-block-preview-image-with-acf_register_block_type/
 	/* Render preview screenshot/html on this section*/
@@ -39,7 +40,7 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 	echo '</pre>';
 
 
-	if(array_key_exists('className', $block)){
+	if ( array_key_exists( 'className', $block ) ) {
 		echo '<p>Class Name contains selected style</p>';
 		echo '<pre>';
 		var_export( $block['className'] );
@@ -86,7 +87,7 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 	echo '<pre>';
 	var_export( $block['backgroundColor'] );
 	echo '</pre>';
-	if(array_key_exists('textColor',$block)){
+	if ( array_key_exists( 'textColor', $block ) ) {
 		echo '<p>textColor</p>';
 		echo '<pre>';
 		var_export( $block['textColor'] );

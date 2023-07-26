@@ -1,7 +1,7 @@
 <?php
 /*
  Template Name: Editing Current Post Form
-*  Template Post Type: post, page
+*  Template Post Type: post, page, solutions
 */
 ?>
 
