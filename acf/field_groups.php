@@ -1447,4 +1447,110 @@ if ( function_exists('acf_add_local_field_group') ):
 		'show_in_rest' => 0,
 	) );
 	} );
-	
+#------------------------------------------------------------------------------------------------------------------------
+add_action( 'acf/include_fields', function() {
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+		return;
+	}
+
+	acf_add_local_field_group( array(
+	'key' => 'group_64c148e39b3b3',
+	'title' => 'Bidirection: Book',
+	'fields' => array(
+		array(
+			'key' => 'field_64c148e467d76',
+			'label' => 'Book author',
+			'name' => 'book_author',
+			'aria-label' => '',
+			'type' => 'user',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'role' => '',
+			'return_format' => 'id',
+			'multiple' => 0,
+			'allow_null' => 0,
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'book',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+	'show_in_rest' => 0,
+) );
+
+	acf_add_local_field_group( array(
+	'key' => 'group_64c14ab46b2c1',
+	'title' => 'Bidirection: User',
+	'fields' => array(
+		array(
+			'key' => 'field_64c14ab57adef',
+			'label' => 'Books',
+			'name' => 'books',
+			'aria-label' => '',
+			'type' => 'post_object',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'post_type' => array(
+				0 => 'book',
+			),
+			'post_status' => '',
+			'taxonomy' => '',
+			'return_format' => 'object',
+			'multiple' => 1,
+			'allow_null' => 0,
+			'ui' => 1,
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'user_form',
+				'operator' => '==',
+				'value' => 'edit',
+			),
+			array(
+				'param' => 'current_user_role',
+				'operator' => '==',
+				'value' => 'administrator',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+	'show_in_rest' => 0,
+) );
+} );
+
+
+

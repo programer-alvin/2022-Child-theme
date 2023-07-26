@@ -28,3 +28,5 @@ require_once $tttc_acf_dir.'/filters-and-actions/filters-and-actions.php';
 require_once $tttc_acf_dir.'/custom-functions.php/functions.php';
 //PHP translations
 require_once $tttc_acf_dir.'/gettext/gettext.php';
+//CPTs
+require_once $tttc_acf_dir.'/cpts.php';
