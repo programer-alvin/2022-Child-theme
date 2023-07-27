@@ -11,7 +11,6 @@ function tttc_register_blocks_automatically() {
 
     foreach($directories as $dir){
         register_block_type( __DIR__ . '/'.$dir.'/block.json' );
-        error_log(json_encode($dir));
     }
 }
 add_action( 'init', 'tttc_register_blocks_automatically' );

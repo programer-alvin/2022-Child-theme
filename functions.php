@@ -206,17 +206,12 @@ add_filter( 'pre_oembed_result', 'tttc_custom_oembed_caching', 10, 3 );
 
 function tttc_custom_oembed_caching( $html, $url, $args ) {
 	$cache_key = 'oembed_' . md5( $url );
-	error_log( json_encode( $cache_key ) );
 	$cached_content = get_transient( $cache_key );
-	error_log( json_encode( $cached_content ) );
 
 	if ( $cached_content !== false ) {
 		// Content found in cache, return it
-		error_log( json_encode( 'Cache has content' ) );
 		return $cached_content->html;
 	}
-
-	error_log( json_encode( 'No cache' ) );
 
 	// Bypass wp_oembed_get() to avoid infinite loop
 	remove_filter( 'pre_oembed_result', 'tttc_custom_oembed_caching', 10 );
@@ -226,7 +221,6 @@ function tttc_custom_oembed_caching( $html, $url, $args ) {
 	// Restore the filter after fetching the oEmbed data
 	add_filter( 'pre_oembed_result', 'tttc_custom_oembed_caching', 10, 3 );
 
-	error_log( json_encode( $content ) );
 	if ( $content !== false ) {
 		// Cache the content for 1 day
 		set_transient( $cache_key, $content, DAY_IN_SECONDS );

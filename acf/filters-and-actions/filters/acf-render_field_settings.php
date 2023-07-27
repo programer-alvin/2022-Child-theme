@@ -31,3 +31,12 @@ function tttc_add_readonly_and_disabled_to_text_field( $field ) {
 		)
 	);
 }
+
+function tttc_disable_post_object_field( $field ) {
+	if ( is_admin() ) {
+		$field['disabled'] = 'disabled';
+	}
+
+	return $field;
+}
+add_filter( 'acf/load_field/type=post_object', 'tttc_disable_post_object_field' );
