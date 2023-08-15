@@ -11,3 +11,4 @@ require_once $tttc_acf_filters_dir . '/acf-fields-relationship-result.php';
 require_once $tttc_acf_filters_dir . '/acf-validate_value.php';
 require_once $tttc_acf_filters_dir . '/acf-render_field_settings.php';
 require_once $tttc_acf_filters_dir . '/acf-save_post.php';
+require_once $tttc_acf_filters_dir . '/acf-field_group-render_field_settings_tab.php';

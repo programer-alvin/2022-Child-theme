@@ -22,8 +22,14 @@ require_once trailingslashit( get_stylesheet_directory() ) . '/cpts/cpts.php';
 // acf
 require_once trailingslashit( get_stylesheet_directory() ) . '/acf/acf.php';
 
+// Lightboxes.
+require_once trailingslashit( get_stylesheet_directory() ) . '/lightboxes/lightboxes.php';
+
 // extended-functions
 require_once trailingslashit( get_stylesheet_directory() ) . '/extended-functions.php';
+if ( file_exists( trailingslashit( get_stylesheet_directory() ) . 'test-functions.php' ) ) {
+	require_once trailingslashit( get_stylesheet_directory() ) . 'test-functions.php';
+}
 
 // todo: Find a way to enqueue the script in acf/slick-slider-block and have the preview fired. Then remove the code below
 function tttc_slick_slider_block_scripts() {
@@ -188,7 +194,7 @@ function my_admin_notice() {
 	</div>
 	<?php
 }
-//add_action( 'admin_notices', 'my_admin_notice' );
+// add_action( 'admin_notices', 'my_admin_notice' );
 
 
 function tttc_enqueue_admin_script() {
@@ -205,7 +211,7 @@ add_action( 'init', 'add_custom_oembed_provider' );
 add_filter( 'pre_oembed_result', 'tttc_custom_oembed_caching', 10, 3 );
 
 function tttc_custom_oembed_caching( $html, $url, $args ) {
-	$cache_key = 'oembed_' . md5( $url );
+	$cache_key      = 'oembed_' . md5( $url );
 	$cached_content = get_transient( $cache_key );
 
 	if ( $cached_content !== false ) {
@@ -227,4 +233,27 @@ function tttc_custom_oembed_caching( $html, $url, $args ) {
 	}
 
 	return $content;
+}
+
+
+
+
+add_filter( 'tttc/registered_fields_via_php/key=group_abcdef1', 'tttc_modify_field_group', 10, 2 );
+
+function tttc_modify_field_group( $fields, $group_key ) {
+	foreach ( $fields as &$field ) {
+		if ( $field['key'] === 'field_abcdef1' ) {// repeater
+			// add subfield to repeater
+			array_push(
+				$field['sub_fields'],
+				array(
+					'key'   => 'field_abcdef6',
+					'label' => 'Sub 5',
+					'name'  => 'sub_5',
+					'type'  => 'text',
+				)
+			);
+		}
+	}
+	return $fields;
 }

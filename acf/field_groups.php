@@ -1227,330 +1227,354 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 #------------------------------------------------------------------------------------------------------------------------
 if ( function_exists('acf_add_local_field_group') ):
 
-	acf_add_local_field_group(array(
-		'key' => 'group_64302bd747ad8',
-		'title' => 'Validate two date fields',
-		'fields' => array(
-			array(
-				'key' => 'field_64302bd842b7e',
-				'label' => 'start date',
-				'name' => 'start_date',
-				'aria-label' => '',
-				'type' => 'date_picker',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'display_format' => 'd/m/Y',
-				'return_format' => 'd/m/Y',
-				'first_day' => 1,
-			),
-			array(
-				'key' => 'field_64302c1942b7f',
-				'label' => 'End Date',
-				'name' => 'end_date',
-				'aria-label' => '',
-				'type' => 'date_picker',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'display_format' => 'd/m/Y',
-				'return_format' => 'd/m/Y',
-				'first_day' => 1,
-			),
-		),
-		'location' => array(
-			array(
+	acf_add_local_field_group(
+		array(
+			'key'                   => 'group_64302bd747ad8',
+			'title'                 => 'Validate two date fields',
+			'fields'                => array(
 				array(
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'post',
+					'key'               => 'field_64302bd842b7e',
+					'label'             => 'start date',
+					'name'              => 'start_date',
+					'aria-label'        => '',
+					'type'              => 'date_picker',
+					'instructions'      => '',
+					'required'          => 0,
+					'conditional_logic' => 0,
+					'wrapper'           => array(
+						'width' => '',
+						'class' => '',
+						'id'    => '',
+					),
+					'display_format'    => 'd/m/Y',
+					'return_format'     => 'd/m/Y',
+					'first_day'         => 1,
+				),
+				array(
+					'key'               => 'field_64302c1942b7f',
+					'label'             => 'End Date',
+					'name'              => 'end_date',
+					'aria-label'        => '',
+					'type'              => 'date_picker',
+					'instructions'      => '',
+					'required'          => 0,
+					'conditional_logic' => 0,
+					'wrapper'           => array(
+						'width' => '',
+						'class' => '',
+						'id'    => '',
+					),
+					'display_format'    => 'd/m/Y',
+					'return_format'     => 'd/m/Y',
+					'first_day'         => 1,
 				),
 			),
-		),
-		'menu_order' => 0,
-		'position' => 'normal',
-		'style' => 'default',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => '',
-		'active' => true,
-		'description' => '',
-		'show_in_rest' => 0,
-	));
-	
+			'location'              => array(
+				array(
+					array(
+						'param'    => 'post_type',
+						'operator' => '==',
+						'value'    => 'post',
+					),
+				),
+			),
+			'menu_order'            => 0,
+			'position'              => 'normal',
+			'style'                 => 'default',
+			'label_placement'       => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen'        => '',
+			'active'                => true,
+			'description'           => '',
+			'show_in_rest'          => 0,
+		)
+	);
+
 	endif;
-		
 
-#------------------------------------------------------------------------------------------------------------------------
-	function register_custom_fields() {
-		acf_add_local_field_group(array(
-		  'key' => 'group_abcdef1',
-		  'title' => 'Repeater Field to be filtered by subfield',
-		  'fields' => array(
-			array(
-			  'key' => 'field_abcdef1',
-			  'label' => 'Repeater Field',
-			  'name' => 'repeater_field_29',
-			  'type' => 'repeater',
-			  'sub_fields' => array(
+
+// ------------------------------------------------------------------------------------------------------------------------
+function register_custom_fields() {
+	$group_key = 'group_abcdef1';
+	$fields    = array(
+		array(
+			'key'           => 'field_abcdef1',
+			'label'         => 'Repeater Field',
+			'name'          => 'repeater_field_29',
+			'type'          => 'repeater',
+			'pagination'    => 1,
+			'rows_per_page' => 2,
+			'sub_fields'    => array(
 				array(
-				  'key' => 'field_abcdef2',
-				  'label' => 'Sub 1',
-				  'name' => 'sub_1',
-				  'type' => 'text',
+					'key'   => 'field_abcdef2',
+					'label' => 'Sub 1',
+					'name'  => 'sub_1',
+					'type'  => 'text',
 				),
 				array(
-				  'key' => 'field_abcdef3',
-				  'label' => 'Sub 2',
-				  'name' => 'sub_2',
-				  'type' => 'text',
+					'key'   => 'field_abcdef3',
+					'label' => 'Sub 2',
+					'name'  => 'sub_2',
+					'type'  => 'text',
 				),
 				array(
-				  'key' => 'field_abcdef4',
-				  'label' => 'Sub 3',
-				  'name' => 'sub_3',
-				  'type' => 'text',
+					'key'   => 'field_abcdef4',
+					'label' => 'Sub 3',
+					'name'  => 'sub_3',
+					'type'  => 'text',
 				),
 				array(
-				  'key' => 'field_abcdef5',
-				  'label' => 'Sub 4',
-				  'name' => 'sub_4',
-				  'type' => 'text',
+					'key'   => 'field_abcdef5',
+					'label' => 'Sub 4',
+					'name'  => 'sub_4',
+					'type'  => 'text',
 				),
-			  ),
 			),
-		  ),
-		  'location' => array(
-			array(
-			  array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'post', // Change 'post' to the desired post type
-			  ),
+		),
+	);
+	$fields    = apply_filters( 'tttc/registered_fields_via_php', $fields, $group_key );
+	$fields    = apply_filters( 'tttc/registered_fields_via_php/key=' . $group_key, $fields, $group_key );
+	acf_add_local_field_group(
+		array(
+			'key'      => $group_key,
+			'title'    => 'Repeater Field to be filtered by subfield',
+			'fields'   => $fields,
+			'location' => array(
+				array(
+					array(
+						'param'    => 'post_type',
+						'operator' => '==',
+						'value'    => 'post', // Change 'post' to the desired post type
+					),
+				),
 			),
-		  ),
-		));
-	  }
-	  add_action('acf/init', 'register_custom_fields');
-	  
-#------------------------------------------------------------------------------------------------------------------------
-	  add_action( 'acf/include_fields', function() {
-		if ( ! function_exists( 'acf_add_local_field_group' ) ) {
-			return;
+		)
+	);
+}
+	  add_action( 'acf/init', 'register_custom_fields' );
+
+// ------------------------------------------------------------------------------------------------------------------------
+	add_action(
+		'acf/include_fields',
+		function() {
+			if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+					return;
+			}
+
+			acf_add_local_field_group(
+				array(
+					'key'                   => 'group_64ba35c37eb4c',
+					'title'                 => 'Bidirection: Page',
+					'fields'                => array(
+						array(
+							'key'               => 'field_64ba35c5e6217',
+							'label'             => 'My related posts',
+							'name'              => 'my_related_posts',
+							'aria-label'        => '',
+							'type'              => 'post_object',
+							'instructions'      => '',
+							'required'          => 0,
+							'conditional_logic' => 0,
+							'wrapper'           => array(
+								'width' => '',
+								'class' => '',
+								'id'    => '',
+							),
+							'post_type'         => array(
+								0 => 'post',
+							),
+							'post_status'       => '',
+							'taxonomy'          => '',
+							'return_format'     => 'object',
+							'multiple'          => 1,
+							'allow_null'        => 0,
+							'ui'                => 1,
+						),
+					),
+					'location'              => array(
+						array(
+							array(
+								'param'    => 'post_type',
+								'operator' => '==',
+								'value'    => 'page',
+							),
+						),
+					),
+					'menu_order'            => -17,
+					'position'              => 'normal',
+					'style'                 => 'default',
+					'label_placement'       => 'top',
+					'instruction_placement' => 'label',
+					'hide_on_screen'        => '',
+					'active'                => true,
+					'description'           => '',
+					'show_in_rest'          => 0,
+				)
+			);
+
+			acf_add_local_field_group(
+				array(
+					'key'                   => 'group_64ba3551e4ce1',
+					'title'                 => 'Bidirection: Post',
+					'fields'                => array(
+						array(
+							'key'               => 'field_64ba3554667e5',
+							'label'             => 'My related page',
+							'name'              => 'my_related_page',
+							'aria-label'        => '',
+							'type'              => 'post_object',
+							'instructions'      => '',
+							'required'          => 0,
+							'conditional_logic' => 0,
+							'wrapper'           => array(
+								'width' => '',
+								'class' => '',
+								'id'    => '',
+							),
+							'post_type'         => array(
+								0 => 'page',
+							),
+							'post_status'       => '',
+							'taxonomy'          => '',
+							'return_format'     => 'object',
+							'multiple'          => 1,
+							'allow_null'        => 0,
+							'ui'                => 1,
+						),
+					),
+					'location'              => array(
+						array(
+							array(
+								'param'    => 'post_type',
+								'operator' => '==',
+								'value'    => 'post',
+							),
+						),
+					),
+					'menu_order'            => -9,
+					'position'              => 'normal',
+					'style'                 => 'default',
+					'label_placement'       => 'top',
+					'instruction_placement' => 'label',
+					'hide_on_screen'        => '',
+					'active'                => true,
+					'description'           => '',
+					'show_in_rest'          => 0,
+				)
+			);
 		}
-	
-		acf_add_local_field_group( array(
-		'key' => 'group_64ba35c37eb4c',
-		'title' => 'Bidirection: Page',
-		'fields' => array(
-			array(
-				'key' => 'field_64ba35c5e6217',
-				'label' => 'My related posts',
-				'name' => 'my_related_posts',
-				'aria-label' => '',
-				'type' => 'post_object',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'post_type' => array(
-					0 => 'post',
-				),
-				'post_status' => '',
-				'taxonomy' => '',
-				'return_format' => 'object',
-				'multiple' => 1,
-				'allow_null' => 0,
-				'ui' => 1,
-			),
-		),
-		'location' => array(
-			array(
-				array(
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'page',
-				),
-			),
-		),
-		'menu_order' => -17,
-		'position' => 'normal',
-		'style' => 'default',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => '',
-		'active' => true,
-		'description' => '',
-		'show_in_rest' => 0,
-	) );
-	
-		acf_add_local_field_group( array(
-		'key' => 'group_64ba3551e4ce1',
-		'title' => 'Bidirection: Post',
-		'fields' => array(
-			array(
-				'key' => 'field_64ba3554667e5',
-				'label' => 'My related page',
-				'name' => 'my_related_page',
-				'aria-label' => '',
-				'type' => 'post_object',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'post_type' => array(
-					0 => 'page',
-				),
-				'post_status' => '',
-				'taxonomy' => '',
-				'return_format' => 'object',
-				'multiple' => 1,
-				'allow_null' => 0,
-				'ui' => 1,
-			),
-		),
-		'location' => array(
-			array(
-				array(
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'post',
-				),
-			),
-		),
-		'menu_order' => -9,
-		'position' => 'normal',
-		'style' => 'default',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => '',
-		'active' => true,
-		'description' => '',
-		'show_in_rest' => 0,
-	) );
-	} );
-#------------------------------------------------------------------------------------------------------------------------
-add_action( 'acf/include_fields', function() {
-	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
-		return;
-	}
+	);
+	  // ------------------------------------------------------------------------------------------------------------------------
+	add_action(
+		'acf/include_fields',
+		function() {
+			if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+				return;
+			}
 
-	acf_add_local_field_group( array(
-	'key' => 'group_64c148e39b3b3',
-	'title' => 'Bidirection: Book',
-	'fields' => array(
-		array(
-			'key' => 'field_64c148e467d76',
-			'label' => 'Book author',
-			'name' => 'book_author',
-			'aria-label' => '',
-			'type' => 'user',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'role' => '',
-			'return_format' => 'id',
-			'multiple' => 0,
-			'allow_null' => 0,
-		),
-	),
-	'location' => array(
-		array(
-			array(
-				'param' => 'post_type',
-				'operator' => '==',
-				'value' => 'book',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-	'active' => true,
-	'description' => '',
-	'show_in_rest' => 0,
-) );
+			acf_add_local_field_group(
+				array(
+					'key'                   => 'group_64c148e39b3b3',
+					'title'                 => 'Bidirection: Book',
+					'fields'                => array(
+						array(
+							'key'               => 'field_64c148e467d76',
+							'label'             => 'Book author',
+							'name'              => 'book_author',
+							'aria-label'        => '',
+							'type'              => 'user',
+							'instructions'      => '',
+							'required'          => 0,
+							'conditional_logic' => 0,
+							'wrapper'           => array(
+								'width' => '',
+								'class' => '',
+								'id'    => '',
+							),
+							'role'              => '',
+							'return_format'     => 'id',
+							'multiple'          => 0,
+							'allow_null'        => 0,
+						),
+					),
+					'location'              => array(
+						array(
+							array(
+								'param'    => 'post_type',
+								'operator' => '==',
+								'value'    => 'book',
+							),
+						),
+					),
+					'menu_order'            => 0,
+					'position'              => 'normal',
+					'style'                 => 'default',
+					'label_placement'       => 'top',
+					'instruction_placement' => 'label',
+					'hide_on_screen'        => '',
+					'active'                => true,
+					'description'           => '',
+					'show_in_rest'          => 0,
+				)
+			);
 
-	acf_add_local_field_group( array(
-	'key' => 'group_64c14ab46b2c1',
-	'title' => 'Bidirection: User',
-	'fields' => array(
-		array(
-			'key' => 'field_64c14ab57adef',
-			'label' => 'Books',
-			'name' => 'books',
-			'aria-label' => '',
-			'type' => 'post_object',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'post_type' => array(
-				0 => 'book',
-			),
-			'post_status' => '',
-			'taxonomy' => '',
-			'return_format' => 'object',
-			'multiple' => 1,
-			'allow_null' => 0,
-			'ui' => 1,
-		),
-	),
-	'location' => array(
-		array(
-			array(
-				'param' => 'user_form',
-				'operator' => '==',
-				'value' => 'edit',
-			),
-			array(
-				'param' => 'current_user_role',
-				'operator' => '==',
-				'value' => 'administrator',
-			),
-		),
-	),
-	'menu_order' => 0,
-	'position' => 'normal',
-	'style' => 'default',
-	'label_placement' => 'top',
-	'instruction_placement' => 'label',
-	'hide_on_screen' => '',
-	'active' => true,
-	'description' => '',
-	'show_in_rest' => 0,
-) );
-} );
+			acf_add_local_field_group(
+				array(
+					'key'                   => 'group_64c14ab46b2c1',
+					'title'                 => 'Bidirection: User',
+					'fields'                => array(
+						array(
+							'key'               => 'field_64c14ab57adef',
+							'label'             => 'Books',
+							'name'              => 'books',
+							'aria-label'        => '',
+							'type'              => 'post_object',
+							'instructions'      => '',
+							'required'          => 0,
+							'conditional_logic' => 0,
+							'wrapper'           => array(
+								'width' => '',
+								'class' => '',
+								'id'    => '',
+							),
+							'post_type'         => array(
+								0 => 'book',
+							),
+							'post_status'       => '',
+							'taxonomy'          => '',
+							'return_format'     => 'object',
+							'multiple'          => 1,
+							'allow_null'        => 0,
+							'ui'                => 1,
+						),
+					),
+					'location'              => array(
+						array(
+							array(
+								'param'    => 'user_form',
+								'operator' => '==',
+								'value'    => 'edit',
+							),
+							array(
+								'param'    => 'current_user_role',
+								'operator' => '==',
+								'value'    => 'administrator',
+							),
+						),
+					),
+					'menu_order'            => 0,
+					'position'              => 'normal',
+					'style'                 => 'default',
+					'label_placement'       => 'top',
+					'instruction_placement' => 'label',
+					'hide_on_screen'        => '',
+					'active'                => true,
+					'description'           => '',
+					'show_in_rest'          => 0,
+				)
+			);
+		}
+	);
 
 
 

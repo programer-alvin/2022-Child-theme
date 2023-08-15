@@ -1,11 +1,16 @@
 <?php
+echo '<pre>';
+var_export(get_field('textarea','options'));
+
+echo '</pre>';
+
 /*
 echo 'test block';
-echo get_field('author');
+echo get_field('author');*/
 echo '<pre>';
-var_export($block);
+var_export(wp_get_attachment_image(22, $size = 'thumbnail'));
 
-echo '</pre>';*/
+echo '</pre>';
 
 //var_dump($wp_block);
 
