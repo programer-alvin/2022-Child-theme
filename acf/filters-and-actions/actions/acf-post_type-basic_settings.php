@@ -1,5 +1,5 @@
 <?php
-add_action( 'acf/post_type/basic_settings', 'tttc_post_type_basic_settings' );
+//add_action( 'acf/post_type/basic_settings', 'tttc_post_type_basic_settings' );
 
 function tttc_post_type_basic_settings($acf_ui_options_page){
 	
