@@ -37,11 +37,17 @@ function tttc_acf_applied_after_save_post( $post_id ) {
  * @param mixed $post_id id of the current object.
  * @return void
  */
-function retrieve_file_url_and_save_it_on_url( $post_id ) {
+function tttc_retrieve_file_url_and_save_it_on_url( $post_id ) {
 	$file_id = get_post_meta( $post_id, 'file', true );
 	if ( $file_id ) {
 		$url=wp_get_attachment_url( $file_id  );// https://developer.wordpress.org/reference/functions/wp_get_attachment_url/
 		update_field( 'url', $url, $post_id );
 	}
 }
-add_action( 'acf/save_post', 'retrieve_file_url_and_save_it_on_url' );
+add_action( 'acf/save_post', 'tttc_retrieve_file_url_and_save_it_on_url' );
+
+add_action('acf/save_post','tttc_test_old_value',5);//test old value
+function tttc_test_old_value($post_id ){
+	$old_value = get_field('field_617564937e7af', $post_id);
+	error_log(json_encode($old_value));
+}
