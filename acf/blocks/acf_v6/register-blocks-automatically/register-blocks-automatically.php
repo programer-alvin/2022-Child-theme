@@ -1,16 +1,72 @@
 <?php
-
-function tttc_get_directories($dir_path){
-    return array_filter(scandir($dir_path), function($item) use ($dir_path) {
-        return is_dir($dir_path . '/' . $item) && !in_array($item, array('.', '..'));
-    });
+/**
+ * Retrieves block directories
+ *
+ * @param string $dir_path
+ * @return array
+ */
+function tttc_get_directories( string $dir_path ) {
+	return array_filter(
+		scandir( $dir_path ),
+		function( $item ) use ( $dir_path ) {
+			return is_dir( $dir_path . '/' . $item ) && ! in_array( $item, array( '.', '..' ) );
+		}
+	);
 }
+
+/**
+ * Registers blocks automatically
+ *
+ * @return void
+ */
 function tttc_register_blocks_automatically() {
 
-    $directories=tttc_get_directories(__DIR__);
+	$directories = tttc_get_directories( __DIR__ );
 
-    foreach($directories as $dir){
-        register_block_type( __DIR__ . '/'.$dir.'/block.json' );
-    }
+	foreach ( $directories as $dir ) {
+		register_block_type( __DIR__ . '/' . $dir . '/block.json' );
+	}
 }
 add_action( 'init', 'tttc_register_blocks_automatically' );
+
+/**
+ * Checks if block name is contained if field group location rules.
+ *
+ * @param string $block_name
+ * @param array  $post
+ * @return void
+ */
+function tttc_has_block_name_contained_field_group_locations( string $block_name, array $post ) {
+	$or_locations = $post['location'];
+	foreach ( $or_locations as $and_locations ) {
+		foreach ( $and_locations as $location ) {
+			if ( 'block' === $location['param'] && $block_name === $location['value'] ) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+function tttc_auto_block_acf_json_save_paths( $paths, $post ) {
+	$directories = tttc_get_directories( __DIR__ );
+	foreach ( $directories as $dir ) {
+		$block_name = 'acf/' . $dir;// assuming block names are postfixed with dir names.
+		if ( tttc_has_block_name_contained_field_group_locations( $block_name, $post ) ) {
+			$paths = array( __DIR__ . '/' . $dir );
+			break;
+		}
+	}
+	return $paths;
+}
+add_filter( 'acf/json/save_paths', 'tttc_auto_block_acf_json_save_paths', 10, 2 );// https://www.advancedcustomfields.com/resources/local-json/#:~:text=ACF%206.2%20also
+
+function tttc_auto_block_acf_json_load_point( $paths ) {
+	// Append the new path and return it.
+	$directories = tttc_get_directories( __DIR__ );
+	foreach ( $directories as $dir ) {
+		$paths[] = __DIR__ . '/' . $dir;
+	}
+	return $paths;
+}
+add_filter( 'acf/settings/load_json', 'tttc_auto_block_acf_json_load_point' );// https://www.advancedcustomfields.com/resources/local-json/#loading-explained
