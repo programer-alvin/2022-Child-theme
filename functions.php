@@ -76,14 +76,16 @@ add_filter( 'should_load_separate_core_block_assets', '__return_true' );// Allow
 function add_event_date_to_permalink( $permalink, $post, $leavename ) {
 	if ( $post->post_type == 'event' ) {
 		$event_date = get_post_meta( $post->ID, 'event_date', true );
-		$event_date = tttc_convert_date_from_one_format_to_another( $event_date, 'Ymd', 'd-m-Y' );
 		if ( $event_date ) {
-			$permalink = str_replace( '%event_date%', $event_date, $permalink );
+			$event_date = tttc_convert_date_from_one_format_to_another( $event_date, 'Ymd', 'd-m-Y' );
+			if ( $event_date ) {
+				$permalink = str_replace( '%event_date%', $event_date, $permalink );
+			}
 		}
 	}
 	return $permalink;
 }
-add_filter( 'post_type_link', 'add_event_date_to_permalink', 10, 3 );
+// add_filter( 'post_type_link', 'add_event_date_to_permalink', 10, 3 );
 
 
 function tttc_register_cpt_event() {
@@ -117,7 +119,7 @@ function tttc_register_cpt_event() {
 		'map_meta_cap'          => true,
 		'hierarchical'          => false,
 		'can_export'            => false,
-		'rewrite'               => array( 'slug' => 'event/%postname%-%event_date%' ), // set permalink structure for specific cpt
+		// 'rewrite'               => array( 'slug' => 'event/%postname%-%event_date%' ), // set permalink structure for specific cpt
 		'query_var'             => true,
 		'supports'              => array( 'title', 'editor', 'thumbnail' ),
 		'show_in_graphql'       => false,

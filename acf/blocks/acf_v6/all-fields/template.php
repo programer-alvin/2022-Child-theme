@@ -1,4 +1,15 @@
 <?php
+echo 'is admin<pre>';
+var_export(is_admin());
+
+echo '</pre>';
+
+echo 'Is preview<pre>';
+var_export($is_preview);
+error_log('is preview'.json_encode($is_preview));
+
+echo '</pre>';
+
 echo '<pre>';
 var_export(get_field('textarea','options'));
 
