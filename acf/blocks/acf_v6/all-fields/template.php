@@ -1,17 +1,17 @@
 <?php
 echo 'is admin<pre>';
-var_export(is_admin());
+var_export( is_admin() );
 
 echo '</pre>';
 
 echo 'Is preview<pre>';
-var_export($is_preview);
-error_log('is preview'.json_encode($is_preview));
+var_export( $is_preview );
+error_log( 'is preview' . json_encode( $is_preview ) );
 
 echo '</pre>';
 
 echo '<pre>';
-var_export(get_field('textarea','options'));
+var_export( get_field( 'textarea', 'options' ) );
 
 echo '</pre>';
 
@@ -19,11 +19,11 @@ echo '</pre>';
 echo 'test block';
 echo get_field('author');*/
 echo '<pre>';
-var_export(wp_get_attachment_image(22, $size = 'thumbnail'));
+var_export( wp_get_attachment_image( 22, $size = 'thumbnail' ) );
 
 echo '</pre>';
 
-//var_dump($wp_block);
+// var_dump($wp_block);
 
 if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/forums/topic/register-block-preview-image-with-acf_register_block_type/
 	/* Render preview screenshot/html on this section*/
