@@ -1224,8 +1224,8 @@ if ( function_exists( 'acf_add_local_field_group' ) ) :
 	);
 
 	endif;
-#------------------------------------------------------------------------------------------------------------------------
-if ( function_exists('acf_add_local_field_group') ):
+// ------------------------------------------------------------------------------------------------------------------------
+if ( function_exists( 'acf_add_local_field_group' ) ) :
 
 	acf_add_local_field_group(
 		array(
@@ -1577,81 +1577,86 @@ function register_custom_fields() {
 	);
 
 
- // ------------------------------------------------------------------------------------------------------------------------
-	add_action( 'acf/include_fields', function() {
-		if ( ! function_exists( 'acf_add_local_field_group' ) ) {
-			return;
-		}
-	
-		acf_add_local_field_group( array(
-		'key' => 'group_64f029a2785c1',
-		'title' => 'Event: Dates',
-		'fields' => array(
-			array(
-				'key' => 'field_64f029a31e245',
-				'label' => 'Dates',
-				'name' => 'dates',
-				'aria-label' => '',
-				'type' => 'repeater',
-				'instructions' => '',
-				'required' => 0,
-				'conditional_logic' => 0,
-				'wrapper' => array(
-					'width' => '',
-					'class' => '',
-					'id' => '',
-				),
-				'layout' => 'table',
-				'pagination' => 0,
-				'min' => 0,
-				'max' => 0,
-				'collapsed' => '',
-				'button_label' => 'Add Row',
-				'bidirectional_custom_notes' => '',
-				'rows_per_page' => 20,
-				'sub_fields' => array(
-					array(
-						'key' => 'field_64f029d01e246',
-						'label' => 'date',
-						'name' => 'date',
-						'aria-label' => '',
-						'type' => 'date_picker',
-						'instructions' => '',
-						'required' => 0,
-						'conditional_logic' => 0,
-						'wrapper' => array(
-							'width' => '',
-							'class' => '',
-							'id' => '',
-						),
-						'display_format' => 'd/m/Y',
-						'return_format' => 'd/m/Y',
-						'first_day' => 1,
-						'bidirectional_custom_notes' => '',
-						'parent_repeater' => 'field_64f029a31e245',
-					),
-				),
-			),
-		),
-		'location' => array(
-			array(
+	// ------------------------------------------------------------------------------------------------------------------------
+	add_action(
+		'acf/include_fields',
+		function() {
+			if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+				return;
+			}
+
+			acf_add_local_field_group(
 				array(
-					'param' => 'post_type',
-					'operator' => '==',
-					'value' => 'event',
-				),
-			),
-		),
-		'menu_order' => 0,
-		'position' => 'normal',
-		'style' => 'default',
-		'label_placement' => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen' => '',
-		'active' => true,
-		'description' => '',
-		'show_in_rest' => 0,
-	) );
-	} );
-	
-	
+					'key'                   => 'group_64f029a2785c1',
+					'title'                 => 'Event: Dates',
+					'fields'                => array(
+						array(
+							'key'                        => 'field_64f029a31e245',
+							'label'                      => 'Dates',
+							'name'                       => 'dates',
+							'aria-label'                 => '',
+							'type'                       => 'repeater',
+							'instructions'               => '',
+							'required'                   => 0,
+							'conditional_logic'          => 0,
+							'wrapper'                    => array(
+								'width' => '',
+								'class' => '',
+								'id'    => '',
+							),
+							'layout'                     => 'table',
+							'pagination'                 => 0,
+							'min'                        => 0,
+							'max'                        => 0,
+							'collapsed'                  => '',
+							'button_label'               => 'Add Row',
+							'bidirectional_custom_notes' => '',
+							'rows_per_page'              => 20,
+							'sub_fields'                 => array(
+								array(
+									'key'               => 'field_64f029d01e246',
+									'label'             => 'date',
+									'name'              => 'date',
+									'aria-label'        => '',
+									'type'              => 'date_picker',
+									'instructions'      => '',
+									'required'          => 0,
+									'conditional_logic' => 0,
+									'wrapper'           => array(
+										'width' => '',
+										'class' => '',
+										'id'    => '',
+									),
+									'display_format'    => 'd/m/Y',
+									'return_format'     => 'd/m/Y',
+									'first_day'         => 1,
+									'bidirectional_custom_notes' => '',
+									'parent_repeater'   => 'field_64f029a31e245',
+								),
+							),
+						),
+					),
+					'location'              => array(
+						array(
+							array(
+								'param'    => 'post_type',
+								'operator' => '==',
+								'value'    => 'event',
+							),
+						),
+					),
+					'menu_order'            => 0,
+					'position'              => 'normal',
+					'style'                 => 'default',
+					'label_placement'       => 'top',
+					'instruction_placement' => 'label',
+					'hide_on_screen'        => '',
+					'active'                => true,
+					'description'           => '',
+					'show_in_rest'          => 0,
+				)
+			);
+		}
+	);
+
+

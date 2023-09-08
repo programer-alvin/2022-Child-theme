@@ -1,0 +1,53 @@
+{
+    "key": "group_64f99d3eedf60",
+    "title": "Block: test",
+    "fields": [
+        {
+            "key": "field_64f99d41ffa29",
+            "label": "test for block post",
+            "name": "test_for_block_post",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "readonly": 1,
+            "disabled": 1,
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "bidirectional_custom_notes": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/auto-block-current-book-content"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "book"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1694084379
+}
