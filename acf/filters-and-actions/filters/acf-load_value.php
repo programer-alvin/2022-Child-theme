@@ -33,3 +33,12 @@ function tttc_default_image_value( $value, $post_id, $field ) {
 }
 
 add_filter( 'acf/load_value/name=image', 'tttc_default_image_value', 10, 3 );// https://www.advancedcustomfields.com/resources/acf-load_value/
+
+function tttc_default_gallery_value( $value, $post_id, $field ) {
+	if ( empty( $value ) ) {
+		$value = array(274,288);// Default value. //replace the value with a known image ID.
+	}
+	return $value;
+}
+
+add_filter( 'acf/load_value/name=gallery', 'tttc_default_gallery_value', 10, 3 );// https://www.advancedcustomfields.com/resources/acf-load_value/
