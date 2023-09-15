@@ -1079,13 +1079,13 @@ color : red;
 						'value'    => 'page',
 					),
 				),
-				array(
+				/*array(
 					array(
 						'param'    => 'block',
 						'operator' => '==',
 						'value'    => 'all',
 					),
-				),
+				),*/
 				array(
 					array(
 						'param'    => 'nav_menu_item',
