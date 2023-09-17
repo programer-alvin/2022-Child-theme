@@ -36,9 +36,28 @@ add_filter( 'acf/load_value/name=image', 'tttc_default_image_value', 10, 3 );// 
 
 function tttc_default_gallery_value( $value, $post_id, $field ) {
 	if ( empty( $value ) ) {
-		$value = array(274,288);// Default value. //replace the value with a known image ID.
+		$value = array( 274, 288 );// Default value. //replace the value with a known image ID.
 	}
 	return $value;
 }
 
 add_filter( 'acf/load_value/name=gallery', 'tttc_default_gallery_value', 10, 3 );// https://www.advancedcustomfields.com/resources/acf-load_value/
+
+function tttc_default_repeater_value( $value, $post_id, $field ) {
+	error_log('repeater');
+	error_log(json_encode($value));
+	if(!$value){
+		// acf/field_groups.php line 779
+		$value= array(
+			array(//row
+			'field_63b82e82bd87c' => 'some text on sub field 1', // sub field 1.
+			'field_63b82e8fbd87d' => 'some text on sub field 2', // sub field 2.
+			'field_623ef4772a244'=> 288, // image. Replace attachment id 288 with valid image attachment Id.
+			'field_624da4b831947'=>'some text on caption', // sub field 2.
+			)
+		);
+	}
+	return $value;
+}
+
+add_filter( 'acf/load_value/name=repeater', 'tttc_default_repeater_value', 10, 3 );// https://www.advancedcustomfields.com/resources/acf-load_value/
