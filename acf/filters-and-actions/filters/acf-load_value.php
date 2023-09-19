@@ -44,8 +44,6 @@ function tttc_default_gallery_value( $value, $post_id, $field ) {
 add_filter( 'acf/load_value/name=gallery', 'tttc_default_gallery_value', 10, 3 );// https://www.advancedcustomfields.com/resources/acf-load_value/
 
 function tttc_default_repeater_value( $value, $post_id, $field ) {
-	error_log('repeater');
-	error_log(json_encode($value));
 	if(!$value){
 		// acf/field_groups.php line 779
 		$value= array(

@@ -1,0 +1,28 @@
+{
+    "name": "acf/auto-block-3",
+    "title": "Auto Block 3",
+    "description": "Block added automatically",
+    "category": "theme",
+    "icon": "admin-comments",
+    "apiVersion": 2,
+    "keywords": [
+        "test",
+        "quote",
+        "auto",
+        "3"
+    ],
+    "acf": {
+        "mode": "edit",
+        "renderTemplate": "template.php",
+        "postTypes": [
+            "post"
+        ]
+    },
+    "supports": {
+        "align":false,
+        "mode":false,
+        "anchor": false,
+        "customClassName": false
+    }
+
+}

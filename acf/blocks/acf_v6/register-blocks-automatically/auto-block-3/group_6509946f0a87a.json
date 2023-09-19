@@ -1,11 +1,11 @@
 {
-    "key": "group_64f081fa80d3a",
-    "title": "Auto block 1",
+    "key": "group_6509946f0a87a",
+    "title": "Auto Block 3",
     "fields": [
         {
-            "key": "field_64f081fb18ef9",
-            "label": "text",
-            "name": "text",
+            "key": "field_6509947024947",
+            "label": "test",
+            "name": "test",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -31,7 +31,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/auto-block-1"
+                "value": "acf\/auto-block-3"
             }
         ]
     ],
@@ -41,8 +41,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": false,
+    "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695118059
+    "modified": 1695126676
 }
