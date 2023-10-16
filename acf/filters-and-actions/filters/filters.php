@@ -16,3 +16,4 @@ require_once $tttc_acf_filters_dir . '/acf-post_type-registration_args.php';
 require_once $tttc_acf_filters_dir . '/acf-load_value.php';
 require_once $tttc_acf_filters_dir . '/acf-settings-load_json.php';
 require_once $tttc_acf_filters_dir . '/acf-json-save_paths.php';
+require_once $tttc_acf_filters_dir . '/acf-taxonomy-registration_args.php';
