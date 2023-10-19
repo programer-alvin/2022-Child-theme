@@ -130,7 +130,30 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 
 		}
 	}
+
+	echo "<p>['attributes']</p>";
+	echo '<pre>';
+	var_export( $block['attributes'] );
+	echo '</pre>';
+
+	
 }
+
+$wrapper_attributes = '';
+if ( ! $is_preview ) {
+	$wrapper_attributes = get_block_wrapper_attributes(
+	array(
+		'id'    => $id,
+		'class' => implode( ' ', $classes ),
+		'style' => implode( ' ', $styles ),
+	)
+	);
+}
+echo '<p>get_block_wrapper_attributes()</p>';
+echo '<pre>';
+var_export( $wrapper_attributes );
+echo '</pre>';
+
 
 
 

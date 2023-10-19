@@ -22,6 +22,9 @@ require_once trailingslashit( get_stylesheet_directory() ) . '/cpts/cpts.php';
 // acf
 require_once trailingslashit( get_stylesheet_directory() ) . '/acf/acf.php';
 
+// actions-and-filters
+require_once trailingslashit( get_stylesheet_directory() ) . '/actions-and-filters/actions-and-filters.php';
+
 // Lightboxes.
 require_once trailingslashit( get_stylesheet_directory() ) . '/lightboxes/lightboxes.php';
 
