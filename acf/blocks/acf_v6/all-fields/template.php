@@ -133,24 +133,31 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 
 	echo "<p>['attributes']</p>";
 	echo '<pre>';
-	var_export( $block['attributes'] );
+	var_export( $block['attributes']['backgroundColor' ]['default'] );
 	echo '</pre>';
-
+	//has-vivid-purple-background-color
 	$wrapper_attributes = '';
 	if ( ! $is_preview ) {
-		$wrapper_attributes = get_block_wrapper_attributes(
-			/*array(
-				'id'    => $id,
-				'class' => implode( ' ', $classes ),
-				'style' => implode( ' ', $styles ),
-			)*/
-		);
+		$wrapper_attributes = get_block_wrapper_attributes();
 	}
 	echo '<p>get_block_wrapper_attributes()</p>';
 	echo '<pre>';
 	var_export( $wrapper_attributes );
 	echo '</pre>';
 
+
+	function add_default_background_class_if_not_exist($wrapper_attributes,$background_color_class){
+		if (strpos($wrapper_attributes, "has-background") !== false) {
+			return $wrapper_attributes;
+		} else {
+			return $wrapper_attributes.' '.$background_color_class;
+		}
+	}
+
+	$background_color=$block['attributes']['backgroundColor' ]['default'];
+	$background_color_class='has-background has-'.$background_color.'-background-color';
+
+	$wrapper_attributes=add_default_background_class_if_not_exist($wrapper_attributes,$background_color_class);
 
 	// Support custom "anchor" values.
 	$anchor = '';
