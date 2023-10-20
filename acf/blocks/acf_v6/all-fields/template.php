@@ -136,23 +136,48 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 	var_export( $block['attributes'] );
 	echo '</pre>';
 
-	
-}
+	$wrapper_attributes = '';
+	if ( ! $is_preview ) {
+		$wrapper_attributes = get_block_wrapper_attributes(
+			/*array(
+				'id'    => $id,
+				'class' => implode( ' ', $classes ),
+				'style' => implode( ' ', $styles ),
+			)*/
+		);
+	}
+	echo '<p>get_block_wrapper_attributes()</p>';
+	echo '<pre>';
+	var_export( $wrapper_attributes );
+	echo '</pre>';
 
-$wrapper_attributes = '';
-if ( ! $is_preview ) {
-	$wrapper_attributes = get_block_wrapper_attributes(
-	array(
-		'id'    => $id,
-		'class' => implode( ' ', $classes ),
-		'style' => implode( ' ', $styles ),
-	)
-	);
+
+	// Support custom "anchor" values.
+	$anchor = '';
+	if ( ! empty( $block['anchor'] ) ) {
+		$anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
+	}
+
+	// Create class attribute allowing for custom "className" and "align" values.
+	$class_name = 'all-fields-block';
+	if ( ! empty( $block['className'] ) ) {
+		$class_name .= ' ' . $block['className'];
+	}
+	if ( ! empty( $block['align'] ) ) {
+		$class_name .= ' align' . $block['align'];
+	}
+	if ( $background_color || $text_color ) {
+		$class_name .= ' has-custom-acf-color';
+	}
+	$class_name .= ' ' . $wrapper_attributes;
+	$style       = '';
+	?>
+	<div <?php echo esc_attr( $anchor ); ?>class="<?php echo esc_attr( $class_name ); ?>" style="<?php echo esc_attr( $style ); ?>">
+		Test: <?php echo $wrapper_attributes; ?>
+	</div>
+
+	<?php
 }
-echo '<p>get_block_wrapper_attributes()</p>';
-echo '<pre>';
-var_export( $wrapper_attributes );
-echo '</pre>';
 
 
 
