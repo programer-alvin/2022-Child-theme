@@ -1711,3 +1711,108 @@ function register_custom_fields() {
 	) );
 	} );
 	
+
+	add_action( 'acf/include_fields', function() {
+		if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+			return;
+		}
+	
+		acf_add_local_field_group( array(
+		'key' => 'group_653804e03793b',
+		'title' => 'Select Field Choices',
+		'fields' => array(
+			array(
+				'key' => 'field_653804e17ac60',
+				'label' => 'Choices',
+				'name' => 'choices',
+				'aria-label' => '',
+				'type' => 'repeater',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'layout' => 'table',
+				'pagination' => 0,
+				'min' => 0,
+				'max' => 0,
+				'collapsed' => '',
+				'button_label' => 'Add Row',
+				'bidirectional_custom_notes' => '',
+				'rows_per_page' => 20,
+				'sub_fields' => array(
+					array(
+						'key' => 'field_653805507ac61',
+						'label' => 'value',
+						'name' => 'value',
+						'aria-label' => '',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'readonly' => 0,
+						'disabled' => 0,
+						'maxlength' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'bidirectional_custom_notes' => '',
+						'parent_repeater' => 'field_653804e17ac60',
+					),
+					array(
+						'key' => 'field_6538056d7ac62',
+						'label' => 'Label',
+						'name' => 'label',
+						'aria-label' => '',
+						'type' => 'text',
+						'instructions' => '',
+						'required' => 0,
+						'conditional_logic' => 0,
+						'wrapper' => array(
+							'width' => '',
+							'class' => '',
+							'id' => '',
+						),
+						'default_value' => '',
+						'readonly' => 0,
+						'disabled' => 0,
+						'maxlength' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'bidirectional_custom_notes' => '',
+						'parent_repeater' => 'field_653804e17ac60',
+					),
+				),
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'options_page',
+					'operator' => '==',
+					'value' => 'theme-general-settings',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+		'show_in_rest' => 0,
+	) );
+	} );
+		

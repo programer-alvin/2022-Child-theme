@@ -36,3 +36,21 @@ function tttc_acf_load_field_select( $field ) {
 // add_filter( 'acf/load_field/type=select', 'tttc_acf_load_field_select' );
 
 
+function tttc_get_choices_from_options(){
+	$choices=array();
+	// acf\field_groups.php 1727
+	$repeater_value=get_field('choices', 'options');// \acf\options-pages\theme-general-settings.php L2
+	if($repeater_value){
+		foreach($repeater_value as $row){
+			$choices[$row['value']]=$row['label'];
+		}
+	}
+	return $choices;
+}
+
+function tttc_acf_load_field_select_choices_from_options_page( $field ) {
+	$field['choices']  = tttc_get_choices_from_options();
+	return $field;
+}
+
+add_filter( 'acf/load_field/name=select', 'tttc_acf_load_field_select_choices_from_options_page' );
