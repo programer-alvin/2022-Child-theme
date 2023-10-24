@@ -1,6 +1,6 @@
 <?php
 /*
-* Template Name: Custom Post Type
+* Template Name: Custom Query Loop
 *  Template Post Type: post, page, careers, clasificaciones, contest, cattron-product, books, cpt
 *
 */
