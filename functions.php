@@ -13,6 +13,9 @@ function test_woo() {
 	echo 'abc';
 }
 
+// extended-functions
+require_once trailingslashit( get_stylesheet_directory() ) . '/extended-functions.php';
+
 // inc
 require_once trailingslashit( get_stylesheet_directory() ) . '/inc/inc.php';
 
@@ -28,8 +31,7 @@ require_once trailingslashit( get_stylesheet_directory() ) . '/actions-and-filte
 // Lightboxes.
 require_once trailingslashit( get_stylesheet_directory() ) . '/lightboxes/lightboxes.php';
 
-// extended-functions
-require_once trailingslashit( get_stylesheet_directory() ) . '/extended-functions.php';
+
 if ( file_exists( trailingslashit( get_stylesheet_directory() ) . 'test-functions.php' ) ) {
 	require_once trailingslashit( get_stylesheet_directory() ) . 'test-functions.php';
 }
