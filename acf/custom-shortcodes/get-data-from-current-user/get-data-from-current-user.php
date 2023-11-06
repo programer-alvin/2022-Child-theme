@@ -1,5 +1,4 @@
 <?php
-// https://drive.google.com/file/d/1OlHHf6fmLbEmnn3RFmuaiklvlZdXxakI/view?usp=sharing
 if ( ! function_exists( 'tttc_get_data_from_current_user_shortcode' ) ) {
 	function tttc_get_data_from_current_user_shortcode( $atts ) {
 		$a       = shortcode_atts(

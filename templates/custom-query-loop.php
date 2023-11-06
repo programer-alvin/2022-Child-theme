@@ -11,6 +11,7 @@ if ( ! function_exists( 'my_custom_post_query_loop' ) ) {
 	function my_custom_post_query_loop( $atts ) {
 		// https://developer.wordpress.org/reference/functions/get_posts/
 		// https://www.advancedcustomfields.com/resources/orde-posts-by-custom-fields/
+		// https://rudrastyh.com/wordpress/meta_query.html
 		$args = array(
 			'post_type'  => 'post',
 			'meta_query' => array(

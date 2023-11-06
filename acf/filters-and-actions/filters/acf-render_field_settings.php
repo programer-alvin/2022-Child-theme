@@ -10,8 +10,8 @@ function tttc_add_readonly_and_disabled_to_text_field( $field ) {
 			'type'         => 'radio',
 			'name'         => 'readonly',
 			'choices'      => array(
-				1 => __( 'Yes', 'acf' ),
 				0 => __( 'No', 'acf' ),
+				1 => __( 'Yes', 'acf' ),
 			),
 			'layout'       => 'horizontal',
 		)
@@ -24,8 +24,8 @@ function tttc_add_readonly_and_disabled_to_text_field( $field ) {
 			'type'         => 'radio',
 			'name'         => 'disabled',
 			'choices'      => array(
-				1 => __( 'Yes', 'acf' ),
 				0 => __( 'No', 'acf' ),
+				1 => __( 'Yes', 'acf' ),
 			),
 			'layout'       => 'horizontal',
 		)
