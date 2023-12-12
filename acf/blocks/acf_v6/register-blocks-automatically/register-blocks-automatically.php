@@ -2,8 +2,8 @@
 /**
  * Retrieves block directories
  *
- * @param string $dir_path
- * @return array
+ * @param string $dir_path The path to the directory.
+ * @return array An array of directories.
  */
 function tttc_get_directories( string $dir_path ) {
 	return array_filter(
@@ -30,11 +30,11 @@ function tttc_register_blocks_automatically() {
 add_action( 'init', 'tttc_register_blocks_automatically' );
 
 /**
- * Checks if block name is contained if field group location rules.
+ * Checks if block name is contained in field group location rules.
  *
- * @param string $block_name
- * @param array  $post
- * @return void
+ * @param string $block_name The name of the block.
+ * @param array  $post An array representing a post.
+ * @return bool True if block name is contained in field group location rules, false otherwise.
  */
 function tttc_has_block_name_contained_field_group_locations( string $block_name, array $post ) {
 	$or_locations = $post['location'];
@@ -48,10 +48,17 @@ function tttc_has_block_name_contained_field_group_locations( string $block_name
 	return false;
 }
 
+/**
+ * Adjusts ACF JSON save paths based on block names.
+ *
+ * @param array $paths An array of ACF JSON save paths.
+ * @param array $post An array representing a post.
+ * @return array Modified array of ACF JSON save paths.
+ */
 function tttc_auto_block_acf_json_save_paths( $paths, $post ) {
 	$directories = tttc_get_directories( __DIR__ );
 	foreach ( $directories as $dir ) {
-		$block_name = 'acf/' . $dir;// assuming block names are postfixed with dir names.
+		$block_name = 'acf/' . $dir; // Assuming block names are postfixed with dir names.
 		if ( tttc_has_block_name_contained_field_group_locations( $block_name, $post ) ) {
 			$paths = array( __DIR__ . '/' . $dir );
 			break;
@@ -59,8 +66,14 @@ function tttc_auto_block_acf_json_save_paths( $paths, $post ) {
 	}
 	return $paths;
 }
-add_filter( 'acf/json/save_paths', 'tttc_auto_block_acf_json_save_paths', 10, 2 );// https://www.advancedcustomfields.com/resources/local-json/#:~:text=ACF%206.2%20also
+add_filter( 'acf/json/save_paths', 'tttc_auto_block_acf_json_save_paths', 10, 2 );
 
+/**
+ * Adjusts ACF JSON load points based on block names.
+ *
+ * @param array $paths An array of ACF JSON load points.
+ * @return array Modified array of ACF JSON load points.
+ */
 function tttc_auto_block_acf_json_load_point( $paths ) {
 	// Append the new path and return it.
 	$directories = tttc_get_directories( __DIR__ );
@@ -69,4 +82,4 @@ function tttc_auto_block_acf_json_load_point( $paths ) {
 	}
 	return $paths;
 }
-add_filter( 'acf/settings/load_json', 'tttc_auto_block_acf_json_load_point' );// https://www.advancedcustomfields.com/resources/local-json/#loading-explained
+add_filter( 'acf/settings/load_json', 'tttc_auto_block_acf_json_load_point' );

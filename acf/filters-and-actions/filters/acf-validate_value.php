@@ -41,7 +41,7 @@ function tttc_limit_password_size( $valid, $value, $field, $input_name ) {
 		return $valid;
 	}
 
-	if(strlen($value)>8){
+	if ( strlen( $value ) > 8 ) {
 		return __( 'Exceeds char limit.' );
 	}
 	return $valid;
