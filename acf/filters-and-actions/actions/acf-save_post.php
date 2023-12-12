@@ -51,3 +51,35 @@ function tttc_test_old_value($post_id ){
 	$old_value = get_field('field_617564937e7af', $post_id);
 	error_log(json_encode($old_value));
 }
+
+// Hook a custom function to run when Advanced Custom Fields data is saved
+add_action('acf/save_post', 'tttc_update_post_title_with_custom_field_text');
+
+/**
+ * Custom function to update post title with the value of a custom field.
+ *
+ * @param int $post_id The ID of the post being saved.
+ */
+function tttc_update_post_title_with_custom_field_text( $post_id ) {
+
+    // Check if the saved post is of type 'post'
+    if(get_post_type( $post_id )=='post'){//check post type.
+
+        // Retrieve the value of the custom field named 'field_name'
+        $field_values=get_field('field_name',$post_id);//retrieve field value.
+
+        // Check if the custom field has a value
+        if($field_values){//if field has value
+
+            // Prepare an array with post ID and the new post title
+            $my_post = array(
+                'ID'           => $post_id,
+                'post_title'   => $field_values,
+            );
+
+            // Update the post in the WordPress database with the new title
+            wp_update_post( $my_post );// Update the post into the database
+        }
+
+    }
+}
