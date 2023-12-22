@@ -59,3 +59,12 @@ function tttc_default_repeater_value( $value, $post_id, $field ) {
 }
 
 add_filter( 'acf/load_value/name=repeater', 'tttc_default_repeater_value', 10, 3 );// https://www.advancedcustomfields.com/resources/acf-load_value/
+
+function tttc_default_taxonomy_value( $value, $post_id, $field ) {
+	if(empty($value)){
+		return array(7);//replace 7 with actual term ID.
+	}
+	return $value;
+}
+
+add_filter('acf/load_value/name=my_taxonomy', 'tttc_default_taxonomy_value', 10, 3);

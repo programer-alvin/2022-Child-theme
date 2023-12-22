@@ -1,7 +1,7 @@
 <?php
 /*
 * Template Name: Custom Query Loop
-*  Template Post Type: post, page, careers, clasificaciones, contest, cattron-product, books, cpt
+*  Template Post Type: post, page, careers, contest, books, cpt
 *
 */
 
