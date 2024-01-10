@@ -146,18 +146,10 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 	echo '</pre>';
 
 
-	function add_default_background_class_if_not_exist($wrapper_attributes,$background_color_class){
-		if (strpos($wrapper_attributes, "has-background") !== false) {
-			return $wrapper_attributes;
-		} else {
-			return $wrapper_attributes.' '.$background_color_class;
-		}
-	}
-
 	$background_color=$block['attributes']['backgroundColor' ]['default'];
 	$background_color_class='has-background has-'.$background_color.'-background-color';
 
-	$wrapper_attributes=add_default_background_class_if_not_exist($wrapper_attributes,$background_color_class);
+	$wrapper_attributes=tttc_add_default_background_class_if_not_exist($wrapper_attributes,$background_color_class);
 
 	// Support custom "anchor" values.
 	$anchor = '';
@@ -185,13 +177,3 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 
 	<?php
 }
-
-
-
-
-
-
-
-
-
-

@@ -162,3 +162,12 @@ function tttc_acf_admin_enqueue_scripts() {
 
 	add_action( 'acf/input/admin_enqueue_scripts', 'tttc_acf_admin_enqueue_scripts' );
 
+	function enqueue_custom_admin_script() {
+		// Register the script
+		wp_register_script( 'custom-admin-script', get_stylesheet_directory_uri() . '/acf/javascript/custom-event-auto-block-render-block-preview.js', array( 'jquery' ), '1.0', true );
+	
+		// Enqueue the script
+		wp_enqueue_script( 'custom-admin-script' );
+	}
+	// Hook into the 'admin_enqueue_scripts' action
+	add_action( 'admin_enqueue_scripts', 'enqueue_custom_admin_script' );

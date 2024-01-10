@@ -264,3 +264,11 @@ function tttc_modify_field_group( $fields, $group_key ) {
 	}
 	return $fields;
 }
+
+function tttc_add_default_background_class_if_not_exist( $wrapper_attributes, $background_color_class ) {
+	if ( strpos( $wrapper_attributes, 'has-background' ) !== false ) {
+		return $wrapper_attributes;
+	} else {
+		return $wrapper_attributes . ' ' . $background_color_class;
+	}
+}

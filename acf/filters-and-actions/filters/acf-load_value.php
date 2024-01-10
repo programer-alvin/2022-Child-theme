@@ -44,15 +44,15 @@ function tttc_default_gallery_value( $value, $post_id, $field ) {
 add_filter( 'acf/load_value/name=gallery', 'tttc_default_gallery_value', 10, 3 );// https://www.advancedcustomfields.com/resources/acf-load_value/
 
 function tttc_default_repeater_value( $value, $post_id, $field ) {
-	if(!$value){
+	if ( ! $value ) {
 		// acf/field_groups.php line 779
-		$value= array(
-			array(//row
-			'field_63b82e82bd87c' => 'some text on sub field 1', // sub field 1.
-			'field_63b82e8fbd87d' => 'some text on sub field 2', // sub field 2.
-			'field_623ef4772a244'=> 288, // image. Replace attachment id 288 with valid image attachment Id.
-			'field_624da4b831947'=>'some text on caption', // sub field 2.
-			)
+		$value = array(
+			array(// row
+				'field_63b82e82bd87c' => 'some text on sub field 1', // sub field 1.
+				'field_63b82e8fbd87d' => 'some text on sub field 2', // sub field 2.
+				'field_623ef4772a244' => 288, // image. Replace attachment id 288 with valid image attachment Id.
+				'field_624da4b831947' => 'some text on caption', // sub field 2.
+			),
 		);
 	}
 	return $value;
@@ -61,10 +61,10 @@ function tttc_default_repeater_value( $value, $post_id, $field ) {
 add_filter( 'acf/load_value/name=repeater', 'tttc_default_repeater_value', 10, 3 );// https://www.advancedcustomfields.com/resources/acf-load_value/
 
 function tttc_default_taxonomy_value( $value, $post_id, $field ) {
-	if(empty($value)){
-		return array(7);//replace 7 with actual term ID.
+	if ( empty( $value ) ) {
+		return array( 7 );// replace 7 with actual term ID.
 	}
 	return $value;
 }
 
-add_filter('acf/load_value/name=my_taxonomy', 'tttc_default_taxonomy_value', 10, 3);
+add_filter( 'acf/load_value/name=my_taxonomy', 'tttc_default_taxonomy_value', 10, 3 );
