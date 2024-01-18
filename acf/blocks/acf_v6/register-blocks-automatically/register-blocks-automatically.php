@@ -20,6 +20,8 @@ function tttc_get_directories( string $dir_path ) {
  * @return void
  */
 function tttc_register_blocks_automatically() {
+	// Register external script here if need be
+	wp_register_script( 'external-sample-script', 'http://localhost/assets/sample.js', array( 'jquery' ), '1.0', true );// Script handle in this case is 'external-script'.
 
 	$directories = tttc_get_directories( __DIR__ );
 

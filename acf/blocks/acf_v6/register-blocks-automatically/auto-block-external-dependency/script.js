@@ -1,0 +1,1 @@
+console.log('External Dependency Block Script');
