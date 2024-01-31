@@ -5,11 +5,13 @@
 */
 ?>
 <?php
-$field_name      = 'kses';
-the_field($field_name);
+$field_name = 'kses';
+
 $unescaped_value = get_field( $field_name );
 // $escaped_value   = wp_kses( $unescaped_value );
 $escaped_value = acf_esc_html( $unescaped_value );
+
+echo $escaped_value;
 
 
 
@@ -39,6 +41,7 @@ $string2 = $escaped_value;
 
 $difference = findStringDifference( $string1, $string2 );
 
-/*echo "String 1: $string1 <br>";
+/*
+echo "String 1: $string1 <br>";
 echo "String 2: $string2 <br>";
 echo "Difference: $difference";*/
