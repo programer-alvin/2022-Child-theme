@@ -43,7 +43,7 @@ add_filter(
 /**
  * Embeds iFrames
  *
- * Usage: embed_iframe(https://www.youtube.com/embed/egf-6m9mOgo?si=UzMlJ_1vxk8XXqAV);
+ * Usage: tttc_embed_iframe(https://www.youtube.com/embed/egf-6m9mOgo?si=UzMlJ_1vxk8XXqAV);
  *
  * @param [type] $url
  * @param string $iframe_title
@@ -54,7 +54,7 @@ add_filter(
  * @param string $iframe_frameborder
  * @return void
  */
-function embed_iframe( $url, $iframe_title = '', $iframe_width = '560', $iframe_height = '315', $div_class = 'tttc-div-iframe', $iframe_class = 'tttc-iframe', $iframe_frameborder = '0' ) {
+function tttc_embed_iframe( $url, $iframe_title = '', $iframe_width = '560', $iframe_height = '315', $div_class = 'tttc-div-iframe', $iframe_class = 'tttc-iframe', $iframe_frameborder = '0' ) {
 	?>
 	<div class="<?php echo esc_attr( $div_class ); ?>">
 	<iframe class="<?php echo esc_attr( $div_class ); ?>" width="<?php echo esc_attr( $iframe_width ); ?>" height="<?php echo esc_attr( $iframe_height ); ?>" src="<?php echo esc_url( $url ); ?>" title="<?php echo esc_attr( $iframe_title ); ?>" frameborder="<?php echo esc_attr( $iframe_frameborder ); ?>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

@@ -15,7 +15,7 @@ $div_class          = get_field( 'div_class' );
 $iframe_class       = get_field( 'iframe_class' );
 $iframe_frameborder = get_field( 'iframe_frameborder' );
 if ( $url ) {
-	embed_iframe( $url, $iframe_title = '', $iframe_width, $iframe_height, $div_class, $iframe_class, $iframe_frameborder );
+	tttc_embed_iframe( $url, $iframe_title = '', $iframe_width, $iframe_height, $div_class, $iframe_class, $iframe_frameborder );
 }
 get_footer();
 
