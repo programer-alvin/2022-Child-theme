@@ -272,3 +272,4 @@ function tttc_add_default_background_class_if_not_exist( $wrapper_attributes, $b
 		return $wrapper_attributes . ' ' . $background_color_class;
 	}
 }
+

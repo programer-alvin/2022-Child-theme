@@ -6,9 +6,9 @@
 ?>
 <?php
 get_header();
-//Field group: https://github.com/programer-alvin/2022-Child-theme/blob/ef4af2f9887703b414f1f52212b316ed087382d6/acf/field_groups.php#L1820C1-L1993C6
+// Field group: https://github.com/programer-alvin/2022-Child-theme/blob/ef4af2f9887703b414f1f52212b316ed087382d6/acf/field_groups.php#L1820C1-L1993C6
 $url                = get_field( 'iframe_url' );
-$iframe_title       = get_field( '' );
+$iframe_title       = get_field( 'iframe_title' );
 $iframe_width       = get_field( 'iframe_width' );
 $iframe_height      = get_field( 'iframe_height' );
 $div_class          = get_field( 'div_class' );
