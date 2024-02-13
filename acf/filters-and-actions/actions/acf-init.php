@@ -10,6 +10,7 @@ add_action(
 					'menu_slug'  => 'user-specific-options',
 					'position'   => '',
 					'redirect'   => false,
+					'capability' => 'edit_posts', // https://wordpress.org/documentation/article/roles-and-capabilities/
 					'post_id'    => 'user_' . $user_id,
 				)
 			);
