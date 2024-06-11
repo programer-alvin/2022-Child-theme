@@ -16,7 +16,7 @@ if ( ! empty( $block['className'] ) ) {
 if ( ! empty( $block['align'] ) ) {
 	$classes .= sprintf( ' align%s', $block['align'] );
 }
-
+$notification = 'Notification content';
 
 ?>
 <div>

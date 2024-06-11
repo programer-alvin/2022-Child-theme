@@ -63,11 +63,12 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 		echo '</pre>';
 	}
 
-	echo '<p>Styles</p>';
-	echo '<pre>';
-	var_export( $block['styles'] );
-	echo '</pre>';
-
+	if ( isset( $block['styles'] ) ) {
+		echo '<p>Styles</p>';
+		echo '<pre>';
+		var_export( $block['styles'] );
+		echo '</pre>';
+	}
 	echo '<p>block_heading</p>';
 	echo '<pre>';
 	var_export( $clone_block_heading );
@@ -75,34 +76,45 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 
 
 	/* Render live block HTML on this section*/
-	echo "<p>['style']['spacing']['margin']</p>";
-	echo '<pre>';
-	var_export( $block['style']['spacing']['margin'] );
-	echo '</pre>';
-	echo "<p>Block Gap: ['style']['spacing']['blockGap']</p>";
-	echo '<pre>';
-	var_export( $block['style']['spacing']['blockGap'] );
-	echo '</pre>';
-	echo "<p>Style: ['style']</p>";
-	echo '<pre>';
-	var_export( $block['style'] );
-	echo '</pre>';
+	if ( isset( $block['style']['spacing']['margin'] ) ) {
+		echo "<p>['style']['spacing']['margin']</p>";
+		echo '<pre>';
+		var_export( $block['style']['spacing']['margin'] );
+		echo '</pre>';
+	}
+	if ( isset( $block['style']['spacing']['blockGap'] ) ) {
+		echo "<p>Block Gap: ['style']['spacing']['blockGap']</p>";
+		echo '<pre>';
+		var_export( $block['style']['spacing']['blockGap'] );
+		echo '</pre>';
+	}
+	if ( isset( $block['style'] ) ) {
+		echo "<p>Style: ['style']</p>";
+		echo '<pre>';
+		var_export( $block['style'] );
+		echo '</pre>';
+	}
 	echo '<p>Link color</p>';
 	echo '<pre>';
-
-	$spacing_css = tttc_convert_spacing_array_to_css( $block['style']['spacing']['margin'] );// acf/blocks/blocks-helpers.php
-	$block_css   = '.' . $block['className'] . ' {' . $spacing_css . '}';
-	echo '<p>Code Generated Spacing css</p>';
-	echo '<pre>';
-	var_dump( $block_css );
-	echo '</pre>';
-
-	var_export( $block['style']['elements']['link']['color'] );
-	echo '</pre>';
-	echo '<p>backgroundColor</p>';
-	echo '<pre>';
-	var_export( $block['backgroundColor'] );
-	echo '</pre>';
+	if ( isset( $block['style']['spacing']['margin'] ) && isset( $block['className'] ) ) {
+		$spacing_css = tttc_convert_spacing_array_to_css( $block['style']['spacing']['margin'] );// acf/blocks/blocks-helpers.php
+		$block_css   = '.' . $block['className'] . ' {' . $spacing_css . '}';
+		echo '<p>Code Generated Spacing css</p>';
+		echo '<pre>';
+		var_dump( $block_css );
+		echo '</pre>';
+	}
+	if ( isset( $block['style']['elements']['link']['color'] ) ) {
+		echo '<pre>';
+		var_export( $block['style']['elements']['link']['color'] );
+		echo '</pre>';
+	}
+	if ( isset( $block['backgroundColor'] ) ) {
+		echo '<p>backgroundColor</p>';
+		echo '<pre>';
+		var_export( $block['backgroundColor'] );
+		echo '</pre>';
+	}
 	if ( array_key_exists( 'textColor', $block ) ) {
 		echo '<p>textColor</p>';
 		echo '<pre>';
@@ -133,9 +145,9 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 
 	echo "<p>['attributes']</p>";
 	echo '<pre>';
-	var_export( $block['attributes']['backgroundColor' ]['default'] );
+	var_export( $block['attributes']['backgroundColor']['default'] );
 	echo '</pre>';
-	//has-vivid-purple-background-color
+	// has-vivid-purple-background-color
 	$wrapper_attributes = '';
 	if ( ! $is_preview ) {
 		$wrapper_attributes = get_block_wrapper_attributes();
@@ -146,10 +158,10 @@ if ( get_field( 'is_example' ) ) {// https://support.advancedcustomfields.com/fo
 	echo '</pre>';
 
 
-	$background_color=$block['attributes']['backgroundColor' ]['default'];
-	$background_color_class='has-background has-'.$background_color.'-background-color';
+	$background_color       = $block['attributes']['backgroundColor']['default'];
+	$background_color_class = 'has-background has-' . $background_color . '-background-color';
 
-	$wrapper_attributes=tttc_add_default_background_class_if_not_exist($wrapper_attributes,$background_color_class);
+	$wrapper_attributes = tttc_add_default_background_class_if_not_exist( $wrapper_attributes, $background_color_class );
 
 	// Support custom "anchor" values.
 	$anchor = '';

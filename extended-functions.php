@@ -62,3 +62,28 @@ function tttc_embed_iframe( $url, $iframe_title = '', $iframe_width = '560', $if
 	<?php
 }
 
+
+/**
+ * Set the default page
+ */
+function tttc_set_default_page_template() {
+	$post_type_object = get_post_type_object( 'page' );
+
+	$post_type_object->template = array(
+		array(
+			'acf/testimonial',
+			array(
+				'data' => array(
+					'field_6660192e5e7b6' => 'data 1',
+					'field_6660195e5e7b7' => 'data 2',
+				),
+				'lock' => array(
+					'move'   => true,
+					'remove' => true,
+				),
+			),
+		),
+	);
+}
+
+  add_action( 'init', 'tttc_set_default_page_template' );

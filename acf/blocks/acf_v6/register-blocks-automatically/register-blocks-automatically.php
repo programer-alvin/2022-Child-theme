@@ -21,8 +21,14 @@ function tttc_get_directories( string $dir_path ) {
  */
 function tttc_register_blocks_automatically() {
 	// Register external script here if need be
-	wp_register_script( 'external-sample-script', 'http://localhost/assets/sample.js', array( 'jquery' ), '1.0', true );// Script handle in this case is 'external-script'.
-
+	// wp_register_script( 'external-sample-script', 'http://localhost/assets/sample.js', array( 'jquery' ), '1.0', true );// Script handle in this case is 'external-script'.
+	wp_register_script(
+		'script-handle-name',
+		get_stylesheet_directory_uri() . '/acf/blocks/acf_v6/register-blocks-automatically/auto-block-1/handle-test.js',
+		array( 'jquery' ),
+		'1.0',
+		true
+	);
 	$directories = tttc_get_directories( __DIR__ );
 
 	foreach ( $directories as $dir ) {

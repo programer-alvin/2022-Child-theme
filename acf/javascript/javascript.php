@@ -162,12 +162,27 @@ function tttc_acf_admin_enqueue_scripts() {
 
 	add_action( 'acf/input/admin_enqueue_scripts', 'tttc_acf_admin_enqueue_scripts' );
 
+function tttc_slick_slider_scripts() {
+	wp_enqueue_script( 'slick-slider-block-initialize-event-js', get_stylesheet_directory_uri() . '/acf/javascript/slick-slider-block-initialize-event.js', array( 'jquery' ), '1.0.0', true );
+}
+
 function tttc_enqueue_custom_admin_script() {
 	// Register the script
 	wp_register_script( 'custom-event-auto-block-render-block-preview', get_stylesheet_directory_uri() . '/acf/javascript/custom-event-auto-block-render-block-preview.js', array( 'jquery' ), '1.0', true );
 
 	// Enqueue the script
 	wp_enqueue_script( 'custom-event-auto-block-render-block-preview' );
+	// slick slider scripts
+	tttc_slick_slider_scripts();
 }
 // Hook into the 'admin_enqueue_scripts' action
 add_action( 'admin_enqueue_scripts', 'tttc_enqueue_custom_admin_script' );
+
+
+
+function tttc_enqueue_front_end_scripts() {
+	// slick slider scripts
+	tttc_slick_slider_scripts();
+}
+
+add_action( 'wp_enqueue_scripts', 'tttc_enqueue_front_end_scripts' );

@@ -26,25 +26,28 @@ if ( get_field( 'is_example' ) ) {
 	}
 } else {
 	/* Render live block HTML on this section*/
-	echo '<pre>';
-	var_export( $block['style']['spacing']['margin'] );
+	if ( isset( $block['style']['spacing']['margin'] ) ) {
 
-	echo '</pre>';
+
+		echo '<pre>';
+		var_export( $block['style']['spacing']['margin'] );
+
+		echo '</pre>';
+	}
 	echo '<p>Test</p>';
 
 	// var_dump($block['example']['attributes']['cover']);
 }
 
 
-if( get_field('true_false_field_name') ) {
-    // Do something.
-    if(!function_exists('wpdocs_theme_name_scripts')){
-        function wpdocs2test_theme_name_scripts() {
-            wp_enqueue_style( 'style-name', get_stylesheet_uri() );
-            wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
-        }
-        add_action( 'wp_enqueue_scripts', 'wpdoc_theme_name_scripts' );
+if ( get_field( 'true_false_field_name' ) ) {
+	// Do something.
+	if ( ! function_exists( 'wpdocs_theme_name_scripts' ) ) {
+		function wpdocs2test_theme_name_scripts() {
+			wp_enqueue_style( 'style-name', get_stylesheet_uri() );
+			wp_enqueue_script( 'script-name', get_template_directory_uri() . '/js/example.js', array(), '1.0.0', true );
+		}
+		add_action( 'wp_enqueue_scripts', 'wpdoc_theme_name_scripts' );
 
-    }
-
+	}
 }

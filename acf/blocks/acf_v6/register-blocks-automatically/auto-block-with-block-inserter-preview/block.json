@@ -1,9 +1,9 @@
 {
-    "name": "acf/slick-slider-block",
-    "title": "Slick Slider Block",
-    "description": "Just a slider",
-    "category": "tttc-acf-category",
-    "icon": "images-alt2",
+    "name": "acf/block-inserter-preview",
+    "title": "Block inserter preview",
+    "description": "Block inserter preview",
+    "category": "theme",
+    "icon": "admin-comments",
     "apiVersion": 2,
     "keywords": [
         "test",
@@ -13,7 +13,8 @@
         "mode": "preview",
         "renderTemplate": "template.php",
         "postTypes": [
-            "post"
+            "post",
+            "page"
         ]
     },
     "styles": [
@@ -69,18 +70,14 @@
                 "text": "This is an example text field",
                 "text_area": "This is an example text area field",
                 "is_example" :true
-            },
-            "um_is_restrict": {
-                "type": "boolean",
-                "default": false
             }
         }
     },
 
     "editorScript": "file:./index.js", 
-    "script": ["file:./slick.min.js","file:./script.js"],
-    "viewScript": [ "file:./view.js"],
+    "script": "file:./script.js",
+    "viewScript": [ "file:./view.js", "example-shared-view-script" ],
     "editorStyle": "file:./index.css",
-    "style": [ "file:./slick.css", "file:./slick-theme.css","file:./style.css"]
+    "style": [ "file:./style.css"]
 
 }

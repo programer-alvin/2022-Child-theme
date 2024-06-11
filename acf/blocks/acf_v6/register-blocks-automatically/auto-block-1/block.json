@@ -74,7 +74,7 @@
     },
 
     "editorScript": "file:./index.js", 
-    "script": "file:./script.js",
+    "script": ["file:./script.js","script-handle-name"],
     "viewScript": [ "file:./view.js", "example-shared-view-script" ],
     "editorStyle": "file:./index.css",
     "style": [ "file:./style.css"]

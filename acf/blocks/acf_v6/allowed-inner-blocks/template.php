@@ -36,19 +36,28 @@ if ( ! empty( $block['align'] ) ) {
 			// Set up innerBlocks and provide a template.
 
 			// Restrict InnerBlocks to allowed block list.
-			$allowed_blocks = array( 'acf/all-fields-block', 'core/heading', 'core/paragraph', 'core/buttons' );
+			$allowed_blocks = array( 'acf/acf-allowed-inner-blocks', 'acf/all-fields-block', 'core/heading', 'core/paragraph', 'core/buttons' );
 
 			// Start InnerBlocks with a template.
 			$template = array(
+
 				array(
 					'acf/all-fields-block',
 					array(
-						'align' => 'center',
-						'lock'  => array(
+						'supports' => array(
+							'color' => array(
+								'text'       => false,
+								'background' => false,
+								'link'       => true,
+							),
+						),
+
+						'align'    => 'center',
+						'lock'     => array(
 							'move'   => true, // Block may not be moved.
 							'remove' => true, // Block may not be removed.
 						),
-						'data'  =>
+						'data'     =>
 							array(
 								'field_616c12495b1da' => 'Test data from allowed inner block template',
 							),
@@ -71,6 +80,7 @@ if ( ! empty( $block['align'] ) ) {
 					array(
 						'placeholder' => __( 'Add CTA text here', 'locale' ),
 						'align'       => 'center',
+						'className'   => 'custom additional-class here',
 					),
 				),
 				array(
@@ -99,8 +109,8 @@ if ( ! empty( $block['align'] ) ) {
 					),
 				),
 			);
-			// Echo out our JSX InnerBlocks compoennt for the editor.
-			echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
+				// Echo out our JSX InnerBlocks compoennt for the editor.
+				echo '<InnerBlocks allowedBlocks="' . esc_attr( wp_json_encode( $allowed_blocks ) ) . '" template="' . esc_attr( wp_json_encode( $template ) ) . '" />';
 			?>
 	</div> 
 
